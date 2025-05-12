@@ -51,37 +51,9 @@ export function Hero() {
         </div>
       </div>
       <div className="hidden md:flex w-full z-10 items-center justify-end">
-        <div className="space-y-4">
-        <Link 
-            href="/learn-more" 
-            className="px-6 py-3 bg-white/10 flex gap-4 text-white border border-white/30 rounded-md font-medium hover:bg-white/20"
-          >
-            <div>
-              <h3 className="text-xs font-normal">Requirements for partnership</h3>
-              <p className="text-[5px] font-light">The Government of Uganda Refugee Response Monitoring System (GoU-RRMS)</p>
-            </div>
-            <LucideChevronRight />
-          </Link>
-        <Link 
-            href="/learn-more" 
-            className="px-6 py-3 bg-white/10 flex gap-4 text-white border border-white/30 rounded-md font-medium hover:bg-white/20"
-          >
-            <div>
-              <h3 className="text-xs font-normal">Theory of Change</h3>
-              <p className="text-[5px] font-light">The Government of Uganda Refugee Response Monitoring System (GoU-RRMS)</p>
-            </div>
-            <LucideChevronRight />
-          </Link>
-        <Link 
-            href="/learn-more" 
-            className="px-6 py-3 bg-white/10 flex gap-4 text-white border border-white/30 rounded-md font-medium hover:bg-white/20"
-          >
-            <div>
-              <h3 className="text-xs font-normal">Support government coordination now</h3>
-              <p className="text-[5px] font-light">The Government of Uganda Refugee Response Monitoring System (GoU-RRMS)</p>
-            </div>
-            <LucideChevronRight />
-          </Link>
+        <div className="flex gap-4 max-w-96 text-sm">
+      <p>13</p>
+      <p>Experience the pinnacle of speed, precision, and innovation with Apex—where high-performance engineering meets cutting</p>
         </div>
       </div>
 
