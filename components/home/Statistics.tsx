@@ -19,11 +19,11 @@ export function Statistics() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-8">
-          <Image width={600} height={450} src="" alt={""} />
+          <Image width={600} height={450} src="/graph.png" alt={""} />
           <div className="flex flex-col md:flex-row gap-8">
             {/*Gradient card */}
             <div className="bg-gradient-to-tr flex flex-col items-center justify-center gap-4 from-destructive to-primary w-[350px] h-[450] rounded-2xl">
-            <Image width={300} height={200} src="" alt={""} />
+            <Image width={300} height={200} src="/3dimage.png" alt={""} />
               <h3>Get Premium Access</h3>
               <p className="max-w-40 text-center">Update Your index information in Setting</p>
               <Link href={""} className="rounded-xl text-secondary bg-white py-4 px-10">

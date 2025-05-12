@@ -8,7 +8,7 @@ export function Hero() {
     <section className="relative h-screen flex flex-col md:flex-row px-4 md:px-24">
       <div className="absolute inset-0 bg-black/50 z-10"></div>
       <Image
-        src="/hero-image.jpg"
+        src="/home.jpeg"
         alt="Refugee mother and child"
         fill
         className="object-cover grayscale"

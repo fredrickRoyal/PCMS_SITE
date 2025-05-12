@@ -8,10 +8,10 @@ export function Hero() {
     <section className="relative h-screen flex flex-col md:flex-row px-4 md:px-24">
       <div className="absolute inset-0 bg-black/50 z-10"></div>
       <Image
-        src="/hero-image.jpg"
+        src="/about.jpeg"
         alt="Refugee mother and child"
         fill
-        className="object-cover grayscale"
+        className="object-cover "
         priority
       />
       <div className="relative z-20 px-4 h-full flex flex-col justify-center">
@@ -35,7 +35,7 @@ export function Hero() {
             Explore settlements
           </Link>
         </div>
-        <div className="flex flex-wrap gap-8 md:gap-40 mt-8 md:mt-0">
+        <div className="flex flex-row gap-8 md:gap-40 mt-8 md:mt-0">
           <div className="flex flex-col  md:w-auto">
             <h3 className="text-3xl md:text-5xl font-normal text-white">1.2</h3>
             <p className="text-xs font-light text-white/80">Handing Control</p>
