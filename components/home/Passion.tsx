@@ -15,20 +15,21 @@ interface CardData {
 const cards: CardData[] = [
   {
     title: 'GoU-RRMS Tracks $10M Investment',
-    image: '/investment-image.jpg',
+    image: '/blog1.jpg',
     description: 'The GoU-RRMS has successfully tracked a $10 million investment from development partners to enhance water and sanitation services in...',
     learnMoreLink: '/investment'
   },
   {
     title: 'New Partnership Boosts Education',
-    image: '/partnership-image.jpg',
+    image: '/blog2.jpeg',
     description: 'The Office of the Prime Minister (OPM), through the GoU-RRMS, has welcomed a new partnership with an international NGO to...',
     learnMoreLink: '/partnership'
   },
   {
     title: 'CRRF Milestone: 500 Refugees Repatriated Voluntarily',
     description: 'A significant milestone has been achieved in the voluntary repatriation program...',
-    learnMoreLink: '/milestone'
+    learnMoreLink: '/milestone',
+    image: 'blog3.jpeg'
   }
 ];
 
