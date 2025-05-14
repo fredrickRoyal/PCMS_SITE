@@ -72,7 +72,7 @@ const Impact = () => {
       <div className="hidden md:flex justify-center items-center h-full">
         <div className='ml-40 bg-destructive h-[70%] w-[70%]'>
           {/* Left side IMPACT text */}
-          <div className="absolute left-36 top-1/2 -translate-y-1/2 pl-8">
+          <div className="absolute left-12 lg:left-36 top-1/2 -translate-y-1/2 pl-8">
             <div className="text-red-600 text-9xl font-medium transition-transform duration-500" style={{ writingMode: 'vertical-lr', transform: 'rotate(180deg)' }}>
               IMPACT
             </div>
@@ -104,8 +104,8 @@ const Impact = () => {
               </div>
               
               {/* Overlay text */}
-              <div className="absolute bottom-20 right-40 text-white transition-all duration-500 transform">
-                <h1 className="text-5xl font-normal">{slides[currentSlide].overlayText}</h1>
+              <div className="absolute bottom-20 right-24 lg:right-40 text-white transition-all duration-500 transform">
+                <h1 className="text-4xl lg:text-5xl w-56 lg:w-full  font-normal">{slides[currentSlide].overlayText}</h1>
               </div>
 
               {/* Navigation arrows */}

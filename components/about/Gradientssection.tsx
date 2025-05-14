@@ -5,7 +5,7 @@ const Gradientssection = () => {
   return (
     <div className="bg-white min-w-full flex h-screen justify-center items-center px-4 sm:px-6">
     <div className="bg-gradient-to-t h-full sm:h-[90%] md:h-[80%] w-full sm:w-[90%] md:w-[80%] to-primary from-destructive p-4 sm:p-6 md:p-8 rounded-2xl">
-      <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+      <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
         <div className="p-4 sm:p-6 rounded-xl w-full flex flex-col md:w-[500px] gap-6 md:gap-8">
          <div className='relative overflow-hidden rounded-xl bg-black w-full h-64 sm:h-80 md:h-96'>
            <Image
@@ -19,7 +19,7 @@ const Gradientssection = () => {
           <button className="w-full mt-2 sm:mt-4 py-2 sm:py-3 border border-1 border-white hover:bg-primary text-white rounded-lg text-sm sm:text-base">System</button>
         </div>
 
-        <div className="w-full md:w-1/2 flex items-center text-white">
+        <div className="w-full lg:w-1/2 flex items-center text-white">
         <div>
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">What is the GoU-RRMS?</h2>
           <p className="text-sm sm:text-base mb-4 sm:mb-6">

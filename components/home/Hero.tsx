@@ -40,31 +40,31 @@ export function Hero() {
         <div className="space-y-4">
         <Link 
             href="/learn-more" 
-            className="px-6 py-3 bg-white/10 flex gap-4 text-white border border-white/30 rounded-md font-medium hover:bg-white/20"
+            className="px-6 py-3 bg-white/80 flex gap-4 text-black border border-white/50 rounded-md font-medium hover:bg-white/100"
           >
             <div>
-              <h3 className="text-xs font-normal">Requirements for partnership</h3>
-              <p className="text-[5px] font-light">The Government of Uganda Refugee Response Monitoring System (GoU-RRMS)</p>
+              <h3 className="text-lg font-normal">Requirements for partnership</h3>
+              <p className="text-md font-light">The Government of Uganda Refugee Response Monitoring System (GoU-RRMS)</p>
             </div>
             <LucideChevronRight />
           </Link>
         <Link 
             href="/learn-more" 
-            className="px-6 py-3 bg-white/10 flex gap-4 text-white border border-white/30 rounded-md font-medium hover:bg-white/20"
+            className="px-6 py-3 bg-white/80 flex gap-4 text-secondary border border-white/50 rounded-md font-medium hover:bg-white/100"
           >
             <div>
-              <h3 className="text-xs font-normal">Theory of Change</h3>
-              <p className="text-[5px] font-light">The Government of Uganda Refugee Response Monitoring System (GoU-RRMS)</p>
+              <h3 className="text-lg font-normal">Theory of Change</h3>
+              <p className="text-md font-light">The Government of Uganda Refugee Response Monitoring System (GoU-RRMS)</p>
             </div>
             <LucideChevronRight />
           </Link>
         <Link 
             href="/learn-more" 
-            className="px-6 py-3 bg-white/10 flex gap-4 text-white border border-white/30 rounded-md font-medium hover:bg-white/20"
+            className="px-6 py-3 bg-white/80 flex gap-4 text-secondary border border-white/50 rounded-md font-medium hover:bg-white/100"
           >
             <div>
-              <h3 className="text-xs font-normal">Support government coordination now</h3>
-              <p className="text-[5px] font-light">The Government of Uganda Refugee Response Monitoring System (GoU-RRMS)</p>
+              <h3 className="text-lg font-normal">Support government coordination now</h3>
+              <p className="text-md font-light">The Government of Uganda Refugee Response Monitoring System (GoU-RRMS)</p>
             </div>
             <LucideChevronRight />
           </Link>
