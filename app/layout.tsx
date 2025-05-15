@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${urbanist.variable} ${poppins.variable} ${manrope.variable} font-urbanist`}>
+      <body className={`${urbanist.variable} ${poppins.variable} ${manrope.variable} font-urbanist flex flex-col`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
