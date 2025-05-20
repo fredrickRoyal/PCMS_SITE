@@ -29,7 +29,7 @@ const cards: CardData[] = [
     title: 'CRRF Milestone: 500 Refugees Repatriated Voluntarily',
     description: 'A significant milestone has been achieved in the voluntary repatriation program...',
     learnMoreLink: '/milestone',
-    image: 'blog3.jpeg'
+    image: '/blog3.jpeg'
   }
 ];
 

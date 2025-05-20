@@ -3,12 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import Flag from "../Flag";
 
-export function Hero() {
+interface HeroProps {
+  title: string;
+  description: string;
+  imageSrc?: string;
+}
+
+export default function Hero({ title, description, imageSrc = "/home.jpeg" }: HeroProps) {
   return (
     <section className="relative bg-orange-400 min-h-[80%] flex flex-col md:flex-row px-4 md:py-24 md:px-24">
       <div className="absolute inset-0 bg-black/50 z-10"></div>
       <Image
-        src="/home.jpeg"
+        src={imageSrc}
         alt="Refugee mother and child"
         fill
         className="object-cover grayscale"
@@ -16,10 +22,10 @@ export function Hero() {
       />
       <div className="relative z-10 px-4 h-full  flex flex-col justify-center">
         <h1 className="font-manrope text-3xl md:text-4xl pb-4 md:pb-4 font-semibold text-white max-w-2xl">
-        Refugee Management in Uganda
+        {title}
         </h1>
         <p className="mt-2 md:mt-4 text-white/90 pb-6 md:pb-12 max-w-2xl text-base md:text-md">
-        Managing People. Supporting Communities. Enhancing Coordination.
+        {description}
         </p>
      
       </div>

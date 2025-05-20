@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   const navitems = [
@@ -32,7 +33,21 @@ export function Header() {
     },
     {
       label: "Publications",
-      link:"/publications"
+      link:"/publications/reports",
+      children: [
+        {
+          label: "Reports",
+          link:"/publications/reports"
+        },
+        {
+          label: "Research Submissions",
+          link:"/publications/research-submissions"
+        },
+        {
+          label: "Research Study Reports",
+          link:"/publications/research-study-reports"
+        }
+      ]
     },
     {
       label: "Partner with us",
@@ -61,13 +76,40 @@ export function Header() {
         
         <nav className="hidden md:flex items-center space-x-6">
           {navitems.map((nav,index) =>(
-            <Link 
-              key={index} 
-              href={nav.link} 
-              className={`text-sm font-medium ${pathname === nav.link ? 'text-primary border-b-2 border-primary' : 'text-gray-900 hover:text-primary'}`}
+            <div 
+              key={index}
+              className="relative group"
+              onMouseEnter={() => nav.children && setActiveDropdown(nav.label)}
+              onMouseLeave={() => {
+                setTimeout(() => {
+                  const dropdownContainer = document.querySelector('.dropdown-container:hover');
+                  if (!dropdownContainer) {
+                    setActiveDropdown(null);
+                  }
+                }, 100);
+              }}
             >
-              {nav.label}
-            </Link>
+              <Link 
+                href={nav.link} 
+                className={`text-sm font-medium ${pathname === nav.link ? 'text-primary border-b-2 border-primary' : 'text-gray-900 hover:text-primary'}`}
+                onClick={() => !nav.children && setActiveDropdown(null)}
+              >
+                {nav.label}
+              </Link>
+              {nav.children && activeDropdown === nav.label && (
+                <div className="dropdown-container absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 mt-2 z-50">
+                  {nav.children.map((child, childIndex) => (
+                    <Link
+                      key={childIndex}
+                      href={child.link}
+                      className={`block px-4 py-2 text-sm ${pathname === child.link ? 'text-primary bg-gray-50' : 'text-gray-900 hover:bg-gray-50 hover:text-primary'}`}
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
         
