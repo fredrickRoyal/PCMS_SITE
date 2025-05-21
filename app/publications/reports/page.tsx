@@ -18,8 +18,8 @@ accordionData = [
     id: '1',
     title: 'Potential projects',
     description: 'Uganda is known to have been hosting refugees since 1942, notably the 8,000 polish refugees that fled to Uganda during the second world war. In 1950s and 60s, Uganda again hosted approximately 78,000 Southern Sudanese and Rwandese refugees. As of June 2019, Uganda is a host to 1,267,043 multi-national refugees coming from over 38 countries, however, 99% of the refugees come from 8 countries: South Sudan, Democratic Republic of Congo, Burundi, Somalia, Rwanda, Eritrea, Ethiopia and Sudan.',
-    nodeComponent: <div>
-        <Link href="/reports" className="text-white m-8 rounded-lg bg-black px-4 py-4">Download document!</Link>,
+    nodeComponent: <div className="py-4">
+        <Link href="/reports" className="text-white rounded-lg bg-black px-4 py-4">Download document!</Link>,
         </div>
   },
   {

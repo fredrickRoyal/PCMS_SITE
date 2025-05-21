@@ -21,13 +21,31 @@ export default function LoginPage() {
       <div className="hidden lg:flex lg:w-1/2 relative bg-gray-900">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <Image
-          src="/images/children.jpg"
+          src="/home.jpeg"
           alt="Children smiling"
           fill
           className="object-cover"
         />
         <div className="relative z-20 p-12 text-white">
-          <h1 className="text-4xl font-bold mb-4">
+          <div className="mb-40">
+          <Link href={"/"}>
+        <div className="flex flex-row items-center gap-2 md:gap-4">
+          <Image 
+            src="/logo.png" 
+            alt="GoU-RRMS Logo" 
+            width={40} 
+            height={40} 
+            className="h-8 md:h-10 w-auto"
+          />
+          <div className="text-xs md:text-sm">
+            <p className="text-primary text-[10px] md:text-xs">The Government of Uganda</p>
+            <p className="text-primary text-[10px] md:text-xs">Refugee Response</p>
+            <p className="text-primary text-[10px] md:text-xs">Monitoring System</p>
+          </div>
+        </div>
+        </Link>
+          </div>
+          <h1 className="text-4xl font-normal mb-4">
             Let's create<br />
             something<br />
             amazing Work<br />
@@ -104,13 +122,22 @@ export default function LoginPage() {
                 >
                   Forgot password?
                 </Link>
+                
+              </div>
+              <div className="text-sm">
+              <Link
+                href="/apply-for-partnership"
+                className="font-medium text-primary hover:text-primary-dark"
+              >
+                Apply for partnership
+              </Link>
               </div>
             </div>
 
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-black hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
               >
                 Sign in
               </button>
