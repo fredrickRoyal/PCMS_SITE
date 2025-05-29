@@ -1,5 +1,4 @@
 import Hero  from "@/components/shared/Hero";
-import Hero2 from "@/components/shared/Hero2";
 
 
 
@@ -10,14 +9,14 @@ import Hero2 from "@/components/shared/Hero2";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col text-secondary">
-     <Hero2 title="Partner With Us" />
+      <Hero title={"Policy & Regulatory Frameworks"} description={"Upholding rights, ensuring safety, and strengthening refugee governance."} />
      <div className="max-w-screen bg-white  py-24 sm:px-6 lg:px-40">
-     <h1 className="font-normal text-center text-lg mb-4">APPLICATION FOR INTENT TO PARTNER WITH OPM </h1>
+     <h1 className="font-normal text-center text-lg mb-4">POLICY, REGULATIONS AND PROCEDURES</h1>
         <p className="mb-4 text-gray-700">Uganda’s refugee policy is anchored in human dignity, inclusion, and self-reliance. This section outlines key national laws, government frameworks, and international treaties that govern the protection and management of refugees.</p>
        
      </div>
       <div className="max-w-screen bg-[#EDF0F2] min-h-screen py-24 sm:px-6 lg:px-40">
-        <form className=" p-8 rounded-lg shadow-sm max-w-4xl mx-auto">
+        <form className="bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="col-span-1">
               <label className="block text-sm font-medium text-gray-700 mb-1">Organisation/Company Name</label>
@@ -48,8 +47,6 @@ export default function Home() {
               <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary" />
             </div>
             <div className="col-span-1">
-          </div>
-            <div className="col-span-1">
               <label className="block text-sm font-medium text-gray-700 mb-1">Permit to Operate No./Trading license No.</label>
               <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary" />
             </div>
@@ -57,21 +54,13 @@ export default function Home() {
               <label className="block text-sm font-medium text-gray-700 mb-1">Permit to Operate Issue Date</label>
               <div className="flex gap-2">
                 <select className="w-1/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary">
-                  {Array.from({ length: 12 }, (_, i) => {
-                    const month = new Date(0, i).toLocaleString('default', { month: 'long' });
-                    return <option key={month} value={i + 1}>{month}</option>;
-                  })}
+                  <option>May</option>
                 </select>
                 <select className="w-1/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary">
-                  {Array.from({ length: 31 }, (_, i) => (
-                    <option key={i + 1} value={i + 1}>{String(i + 1).padStart(2, '0')}</option>
-                  ))}
+                  <option>07</option>
                 </select>
                 <select className="w-1/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary">
-                  {Array.from({ length: 21 }, (_, i) => {
-                    const year = new Date().getFullYear() - 10 + i;
-                    return <option key={year} value={year}>{year}</option>;
-                  })}
+                  <option>2023</option>
                 </select>
               </div>
             </div>
@@ -79,26 +68,16 @@ export default function Home() {
               <label className="block text-sm font-medium text-gray-700 mb-1">Permit to Operate/Trading license Expiry Date</label>
               <div className="flex gap-2">
                 <select className="w-1/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary">
-                  {Array.from({ length: 12 }, (_, i) => {
-                    const month = new Date(0, i).toLocaleString('default', { month: 'long' });
-                    return <option key={month} value={i + 1}>{month}</option>;
-                  })}
+                  <option>May</option>
                 </select>
                 <select className="w-1/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary">
-                  {Array.from({ length: 31 }, (_, i) => (
-                    <option key={i + 1} value={i + 1}>{String(i + 1).padStart(2, '0')}</option>
-                  ))}
+                  <option>07</option>
                 </select>
                 <select className="w-1/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary">
-                  {Array.from({ length: 21 }, (_, i) => {
-                    const year = new Date().getFullYear() - 10 + i;
-                    return <option key={year} value={year}>{year}</option>;
-                  })}
+                  <option>2023</option>
                 </select>
               </div>
             </div>
-            <div className="col-span-1">
-          </div>
             <div className="col-span-1">
               <label className="block text-sm font-medium text-gray-700 mb-1">Applicant First Name</label>
               <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary" />

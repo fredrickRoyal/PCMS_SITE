@@ -115,7 +115,7 @@ export function Header() {
         
         <div className="flex items-center gap-4">
           <Link 
-            href="/login" 
+            href="http://143.198.243.102:4400/Login" 
             className="hidden md:block px-6 md:px-8 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-yellow-600"
           >
             Login
@@ -153,7 +153,7 @@ export function Header() {
             </Link>
           ))}
           <Link 
-            href="/login" 
+            href="http://143.198.243.102:4400/Login" 
             className="mt-4 px-6 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-yellow-600 text-center"
             onClick={() => setIsMenuOpen(false)}
           >

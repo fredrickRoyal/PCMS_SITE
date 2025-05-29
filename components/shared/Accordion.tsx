@@ -32,7 +32,7 @@ const Accordion: React.FC<AccordionProps> = ({ data, className = '' }) => {
             onClick={() => toggleAccordion(item.id)}
             className="w-full flex items-center justify-between p-6 focus:outline-none"
           >
-            <span className="text-xl font-semibold text-gray-900">{item.title}</span>
+            <span className="text-xl font-semibold uppercase text-gray-900">{item.title}</span>
             <motion.div
               initial={false}
               animate={{

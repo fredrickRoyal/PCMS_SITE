@@ -16,20 +16,20 @@ export function Hero() {
       />
       <div className="relative z-20 px-4 h-full flex flex-col justify-center">
         <h1 className="font-manrope text-3xl md:text-4xl pb-4 md:pb-8 font-semibold text-white max-w-2xl">
-          Coordinating Uganda's Refugee Response for a Brighter Future
+        Empowering coordinated action for impactful refugee response
         </h1>
         <p className="mt-2 md:mt-4 text-white/90 pb-6 md:pb-12 max-w-xl text-base md:text-lg">
-         The Government of Uganda Refugee Response Monitoring System (GoU-RRMS) strengthens coordination, monitoring, and reporting of refugee programs.
+        A centralized digital platform managed by OPM, streamlining refugee response coordination through partner registration, MoU management, compliance tracking, reporting, and secure information sharing ensuring transparency, accountability, and alignment with Uganda&apos;s legal framework for refugee response.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link 
-            href="/register" 
+            href="http://143.198.243.102:4400/RegisterPartner" 
             className="px-6 py-3 bg-white text-black rounded-md font-medium hover:bg-yellow-600"
           >
             Apply for Partnernship
           </Link>
           <Link 
-            href="/learn-more" 
+            href="/settlements" 
             className="px-6 py-3 bg-white/10 text-white border border-white/30 rounded-md font-medium hover:bg-white/20"
           >
             Refugee settlements
