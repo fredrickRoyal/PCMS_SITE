@@ -115,8 +115,8 @@ export function Header() {
                 href={nav.link}
                 className={`text-sm font-medium ${
                   pathname === nav.link
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-gray-900 hover:text-primary"
+                    ? "text-destructive border-b-2 border-destructive"
+                    : "text-gray-900 hover:text-destructive"
                 }`}
                 onClick={() => !nav.children && setActiveDropdown(null)}
               >
@@ -130,8 +130,8 @@ export function Header() {
                       href={child.link}
                       className={`block px-4 py-2 text-sm ${
                         pathname === child.link
-                          ? "text-primary bg-gray-50"
-                          : "text-gray-900 hover:bg-gray-50 hover:text-primary"
+                          ? "text-destructive bg-gray-50"
+                          : "text-gray-900 hover:bg-gray-50 hover:text-destructive"
                       }`}
                     >
                       {child.label}
@@ -152,7 +152,7 @@ export function Header() {
           </Link> */}
           <Link
             href="http://143.198.243.102:4400/Login"
-            className="hidden md:block px-6 md:px-8 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-yellow-600"
+            className="hidden md:block px-6 md:px-8 py-2 bg-destructive text-white rounded-lg text-sm font-medium hover:bg-red-500"
           >
             Login
           </Link>
