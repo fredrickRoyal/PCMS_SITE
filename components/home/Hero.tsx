@@ -27,13 +27,13 @@ export function Hero() {
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link
-            href="http://143.198.243.102:4400/RegisterPartner"
+            href="/projects"
             className="px-6 py-3 bg-white text-black rounded-md font-medium hover:bg-yellow-600"
           >
             Refugee Projects
           </Link>
           <Link
-            href="/settlements"
+            href="/organizations"
             className="px-6 py-3 bg-white/10 text-white border border-white/30 rounded-md font-medium hover:bg-white/20"
           >
             Refugee Partners
@@ -43,7 +43,7 @@ export function Hero() {
       <div className="hidden md:flex w-full z-10 items-center justify-end">
         <div className="space-y-4">
           <Link
-            href="/learn-more"
+            href="/partner-requirements"
             className="px-6 py-3 bg-white/80 flex gap-4 text-black border border-white/50 rounded-md font-medium hover:bg-white/100"
           >
             <div>
@@ -58,11 +58,13 @@ export function Hero() {
             <LucideChevronRight />
           </Link>
           <Link
-            href="/learn-more"
+            href="/crrf"
             className="px-6 py-3 bg-white/80 flex gap-4 text-secondary border border-white/50 rounded-md font-medium hover:bg-white/100"
           >
             <div>
-              <h3 className="text-lg font-normal">Theory of Change</h3>
+              <h3 className="text-lg font-normal">
+                The Comprehensive Refugee Response Framework (CRRF) in Uganda
+              </h3>
               <p className="text-lg font-light">
                 The Government of Uganda Refugee Response Monitoring System
                 (GoU-RRMS)
@@ -71,7 +73,7 @@ export function Hero() {
             <LucideChevronRight />
           </Link>
           <Link
-            href="/learn-more"
+            href="/support-coordination"
             className="px-6 py-3 bg-white/80 flex gap-4 text-secondary border border-white/50 rounded-md font-medium hover:bg-white/100"
           >
             <div>

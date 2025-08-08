@@ -49,19 +49,23 @@ export function Header() {
         },
       ],
     },
+    // {
+    //   label: "Partner with us",
+    //   link: "/partner",
+    //   children: [
+    //     {
+    //       label: "Apply for partnership",
+    //       link: "/partner/apply-partnership",
+    //     },
+    //     {
+    //       label: "Requirements for partnershipl",
+    //       link: "/partner/partner-requirements",
+    //     },
+    //   ],
+    // },
     {
       label: "Partner with us",
-      link: "/partner",
-      children: [
-        {
-          label: "Apply for partnership",
-          link: "/partner/apply-partnership",
-        },
-        {
-          label: "Requirements for partnershipl",
-          link: "/partner/partner-requirements",
-        },
-      ],
+      link: "http://143.198.243.102:4400/RegisterPartner",
     },
     {
       label: "Contact Us",
