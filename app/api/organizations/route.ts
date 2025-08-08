@@ -5,7 +5,7 @@ export async function GET() {
     const apiKey = "f47ac10b-58cc-4372-a567-0e02b2c3d479";
 
     const response = await fetch(
-      "http://urrms.opm.go.ug:1408/api/v1/organizations?page=0&size=10",
+      "http://urrms.opm.go.ug:1408/api/v1/organizations?page=0&size=200",
       {
         method: "GET",
         headers: {
