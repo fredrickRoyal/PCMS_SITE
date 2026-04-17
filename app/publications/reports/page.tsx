@@ -16,22 +16,22 @@ interface AccordionItem {
 accordionData = [
   {
     id: '1',
-    title: 'Potential projects',
-    description: 'Uganda is known to have been hosting refugees since 1942, notably the 8,000 polish refugees that fled to Uganda during the second world war. In 1950s and 60s, Uganda again hosted approximately 78,000 Southern Sudanese and Rwandese refugees. As of June 2019, Uganda is a host to 1,267,043 multi-national refugees coming from over 38 countries, however, 99% of the refugees come from 8 countries: South Sudan, Democratic Republic of Congo, Burundi, Somalia, Rwanda, Eritrea, Ethiopia and Sudan.',
+    title: 'Recording of the Training on Applying for an MoU with OPM (Module 1) Friday 19/09/2025',
+    description: 'The meeting focused on introducing and demonstrating a new Partnership Coordination and Monitoring System (PCMS) developed to improve partner collaboration with the Office of the Prime Minister, with participants learning about key features including MOU processing, project documentation, and budgeting requirements. The system demonstration covered various aspects including web-based platform setup, project profiling, budget categorization, and MOU application processes, with participants asking questions about technical implementation and system requirements. The session concluded with discussions about system improvements, technical issues, and plans for follow-up support including training materials and additional meetings to address outstanding questions',
     nodeComponent: <div className="py-4">
-        <Link href="/reports" className="text-white rounded-lg bg-black px-4 py-4">Download document!</Link>,
+        <Link href="https://drive.google.com/file/d/1QuDIiVxztehp00TOCYCkokGi9AQCe_-J/view?usp=sharing" target="_blank" className="text-white rounded-lg bg-black px-4 py-4">Download Recording</Link>,
         </div>
   },
-  {
-    id: '2',
-    title: 'THE UGANDA REPUBLIC ACT',
-    description: 'The Uganda Republic Act (URA) is the legislative framework that governs the refugee crisis in Uganda.',
-  }
+  // {
+  //   id: '2',
+  //   title: 'THE UGANDA REPUBLIC ACT',
+  //   description: 'The Uganda Republic Act (URA) is the legislative framework that governs the refugee crisis in Uganda.',
+  // }
 ];
 
 export default function ReportsPage() {
   return (<>
-        <Hero2 title={"Research of Study Reports"}  />   
+        <Hero2 title={"Learning Videos of OPM Partnership Coordination & Monitoring System"}  />   
     <div className="container mx-auto px-4 py-8">
       <Accordion data={accordionData} />
     </div>

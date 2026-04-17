@@ -16,7 +16,7 @@ export function Header() {
       link: "/about",
     },
     {
-      label: "Refugee Management",
+      label: "Partnership Management",
       link: "/refugee-management",
     },
     {
@@ -36,7 +36,7 @@ export function Header() {
       link: "/publications/reports",
       children: [
         {
-          label: "Reports",
+          label: "Videos",
           link: "/publications/reports",
         },
         {
@@ -65,7 +65,7 @@ export function Header() {
     // },
     {
       label: "Partner with us",
-      link: "http://143.198.243.102:4400/RegisterPartner",
+      link: "https://app.partnerships.opm.go.ug/RegisterPartner",
     },
     {
       label: "Contact Us",
@@ -86,10 +86,10 @@ export function Header() {
             />
             <div className="text-xs md:text-sm">
               <p className="text-gray-600 text-[10px] md:text-xs">
-                The Government of Uganda
+                OPM Partnership
               </p>
               <p className="text-gray-600 text-[10px] md:text-xs">
-                Refugee Response
+                Coordination &
               </p>
               <p className="text-gray-600 text-[10px] md:text-xs">
                 Monitoring System
@@ -155,7 +155,7 @@ export function Header() {
             Contact Us
           </Link> */}
           <Link
-            href="http://143.198.243.102:4400/Login"
+            href="https://app.partnerships.opm.go.ug/Login"
             className="hidden md:block px-6 md:px-8 py-2 bg-destructive text-white rounded-lg text-sm font-medium hover:bg-red-500"
           >
             Login
@@ -208,7 +208,7 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="http://143.198.243.102:4400/Login"
+            href="https://app.partnerships.opm.go.ug/Login"
             className="mt-4 px-6 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-yellow-600 text-center"
             onClick={() => setIsMenuOpen(false)}
           >

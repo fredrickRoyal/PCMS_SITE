@@ -58,13 +58,22 @@ export function FAQ() {
           {/* Topics on the left */}
           <div className="md:col-span-4 space-y-3 md:space-y-4">
             {faqTopics.map((topic) => (
-              <button
+              <div
                 key={topic.id}
+                role="button"
+                tabIndex={0}
                 onClick={() => {
                   setSelectedTopic(topic.id);
                   setOpenQuestion(null);
                 }}
-                className={`w-full text-left p-4 rounded-lg transition-all duration-300 ${topic.id === selectedTopic ? 'bg-gradient-to-r ' + topic.gradient + ' text-white' : 'bg-white hover:bg-gray-50'}`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedTopic(topic.id);
+                    setOpenQuestion(null);
+                  }
+                }}
+                className={`w-full text-left p-4 rounded-lg cursor-pointer transition-all duration-300 ${topic.id === selectedTopic ? 'bg-gradient-to-r ' + topic.gradient + ' text-white' : 'bg-white hover:bg-gray-50'}`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <ArrowRight size={18} className={`transition-colors duration-300 ${topic.id === selectedTopic ? 'text-white' : 'text-gray-400'}`} />
@@ -74,7 +83,7 @@ export function FAQ() {
                 <p className={`text-sm transition-colors duration-300 ${topic.id === selectedTopic ? 'text-white/90' : 'text-gray-500'}`}>
                   {topic.description}
                 </p>
-              </button>
+              </div>
             ))}
           </div>
 

@@ -12,7 +12,7 @@ const urbanist = Urbanist({
 });
 const manrope = Manrope({ 
   subsets: ["latin"],
-  variable: "--font-urbanist",
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -24,8 +24,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "GoU-RRMS | Uganda's Refugee Response Management System",
-  description: "Coordinating Uganda's Refugee Response for a Brighter Future",
+  title: "PCMS | OPM Partnership Coordination & Monitoring System",
+  description: "Empowering coordinated and impactful Partnerships",
 };
 
 export default function RootLayout({

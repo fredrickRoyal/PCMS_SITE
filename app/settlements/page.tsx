@@ -2,9 +2,6 @@ import Hero  from "@/components/shared/Hero";
 
 import SystemInfo from "@/components/settlements/SystemInfo";
 import Accordion from "@/components/shared/Accordion";
-
-let accordionData: AccordionItem[];
-
 interface AccordionItem {
   id: string;
   title: string;
@@ -12,7 +9,8 @@ interface AccordionItem {
   imageSrc?: string;
   nodeComponent?: React.ReactNode;
 }
-accordionData = [
+
+const accordionData: AccordionItem[] = [
   {
     id: '1',
     title: 'Nakivale Settlement - Mbarara Regional Desk, Isingiro District',

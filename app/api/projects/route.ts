@@ -6,7 +6,7 @@ export async function GET() {
     const apiKey = "f47ac10b-58cc-4372-a567-0e02b2c3d479";
 
     const response = await fetch(
-      "http://urrms.opm.go.ug:1408/api/v1/projects",
+      "https://api.partnerships.opm.go.ug/ProjectManagement/projectSummary/thematicBudgetInvestment?accountType=MANAGEMENT",
       {
         method: "GET",
         headers: {
@@ -34,7 +34,11 @@ export async function GET() {
     }
 
     const data = await response.json();
-    return NextResponse.json(data);
+    return NextResponse.json({
+      data: data,
+      status: true,
+      message: "Projects data fetched successfully",
+    });
   } catch (error) {
     console.error("API Request Error:", error);
     return NextResponse.json(

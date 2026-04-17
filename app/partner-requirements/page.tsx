@@ -146,7 +146,7 @@ export default function PartnershipRequirementsPage() {
       {/* Hero Section */}
       <Hero2
         title="Requirements for Partnership"
-        subtitle="Guidelines and requirements for organizations seeking to partner with OPM in refugee response"
+        subtitle="Guidelines and requirements for organizations seeking to partner with OPM"
       />
 
       {/* Main Content */}
@@ -155,12 +155,10 @@ export default function PartnershipRequirementsPage() {
           {/* Introduction */}
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Registration Requirements for Refugee Response Partners
+              Registration Requirements for Partnership with OPM
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              The Department of Refugees (DOR) under the Office of the Prime
-              Minister (OPM) is responsible for registering and coordinating all
-              organisations engaged in refugee response activities. This
+            The Office of the Prime Minister (OPM) is mandated to register and coordinate all organizations and their activities across various interventions. This
               includes NGOs, CBOs, government institutions, private sector
               entities, academic institutions, and development partners.
             </p>
@@ -173,9 +171,7 @@ export default function PartnershipRequirementsPage() {
             </h3>
             <div className="mb-6 bg-orange-50 p-4 rounded-lg">
               <p className="text-gray-700">
-                All organisations involved in providing services to refugees,
-                host communities, or other persons of concern must complete the
-                registration process with the Department of Refugees.
+              All organizations seeking partnership with the Office of the Prime Minister are required to complete the registration process and submit all necessary documentation
               </p>
             </div>
             <Accordion data={requirementsData} />

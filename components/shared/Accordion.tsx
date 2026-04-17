@@ -33,7 +33,7 @@ const Accordion: React.FC<AccordionProps> = ({ data, className = '' }) => {
             className="w-full flex items-center justify-between p-6 focus:outline-none"
           >
             <span className="text-xl font-semibold uppercase text-gray-900">{item.title}</span>
-            <motion.div
+            <motion.span
               initial={false}
               animate={{
                 backgroundColor: openItem === item.id ? '#EF4444' : '#10B981',
@@ -53,7 +53,7 @@ const Accordion: React.FC<AccordionProps> = ({ data, className = '' }) => {
               >
                 {openItem === item.id ? '-' : '+'}
               </motion.span>
-            </motion.div>
+            </motion.span>
           </button>
 
           <AnimatePresence>

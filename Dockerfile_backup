@@ -1,0 +1,40 @@
+# Step 1: Build Next.js app
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Install dependencies
+COPY package.json package-lock.json* yarn.lock* pnpm-lock.yaml* ./
+RUN \
+  if [ -f package-lock.json ]; then npm ci; \
+  elif [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
+  elif [ -f pnpm-lock.yaml ]; then npm install -g pnpm && pnpm install --frozen-lockfile; \
+  else npm install; \
+  fi
+
+# Copy project files and build
+COPY . .
+RUN npm run build
+
+# Step 2: Production image with Nginx + Node
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+
+# Install Nginx
+RUN apk add --no-cache nginx
+
+# Copy built app
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+# Copy Nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start both Next.js & Nginx
+CMD ["sh", "-c", "npm run start & nginx -g 'daemon off;'"]

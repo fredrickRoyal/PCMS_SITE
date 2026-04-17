@@ -18,16 +18,16 @@ export function Footer() {
                   className="h-8 md:h-10 w-auto"
                 />
                 <div className="text-sm text-primary">
-                  <p className="text-xs">The Government of Uganda</p>
-                  <p className="text-xs">Refugee Response</p>
+                  <p className="text-xs">OPM Partnership</p>
+                  <p className="text-xs">Co-ordination &</p>
                   <p className="text-xs">Monitoring System</p>
                 </div>
               </div>
               <div className="text-sm mb-4 md:mb-0">
-                <p>A comprehensive system for coordinating and monitoring refugee response in Uganda.</p>
+                <p>A comprehensive system for Co-ordinating and monitoring OPM Partnerships in Uganda.</p>
               </div>
             </div>
-            <p className="text-sm mt-4 md:mt-0 md:absolute md:bottom-0">
+            <p suppressHydrationWarning className="text-sm mt-4 md:mt-0 md:absolute md:bottom-0">
               © {new Date().getFullYear()} Government of Uganda
             </p>
           </div>
