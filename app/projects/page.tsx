@@ -30,7 +30,7 @@ export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+
   // Filter States
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedMDA, setSelectedMDA] = useState("Office of the Prime Minister");
@@ -108,13 +108,13 @@ export default function ProjectsPage() {
 
   // Combined Filtering Logic
   const filteredProjects = projects.filter((project) => {
-    const matchesSearch = !searchTerm || 
+    const matchesSearch = !searchTerm ||
       (project.organisation?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
       (project.thematicArea?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
       (project.subThematicArea?.toLowerCase() || "").includes(searchTerm.toLowerCase());
 
     // NOTE: MDA and Dept filters are currently disabled for data loading as per user request
-    const matchesMDA = true; 
+    const matchesMDA = true;
     const matchesDept = true;
     const matchesOrg = !selectedOrg || project.organisation?.toUpperCase() === selectedOrg;
     const matchesTheme = !selectedTheme || project.thematicArea === selectedTheme;
@@ -170,7 +170,7 @@ export default function ProjectsPage() {
 
     // Create worksheet
     const ws = XLSX.utils.json_to_sheet(exportData);
-    
+
     // Set column widths
     const wscols = [
       { wch: 5 },  // #
@@ -230,7 +230,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 md:p-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Partner Investments</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">Financial & Output contribution by the Non-state Actors (How much is being invested & what is being delivered?)</h1>
 
       {/* Search and Filters Section */}
       <div className="bg-white p-6 rounded-xl shadow-sm mb-8 border border-gray-100">
@@ -280,7 +280,7 @@ export default function ProjectsPage() {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            
+
             <button
               onClick={handleExportExcel}
               className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
@@ -289,7 +289,7 @@ export default function ProjectsPage() {
               Export to Excel
             </button>
           </div>
-          
+
           {(selectedMDA || selectedDept || selectedOrg || selectedTheme || searchTerm) && (
             <button
               onClick={() => {

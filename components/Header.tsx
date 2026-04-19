@@ -27,10 +27,10 @@ export function Header() {
       label: "Stakeholders",
       link: "/stakeholders",
     },
-    {
-      label: "Settlements",
-      link: "/settlements",
-    },
+    // {
+    //   label: "Settlements",
+    //   link: "/settlements",
+    // },
     {
       label: "Publications",
       link: "/publications/reports",
@@ -63,37 +63,37 @@ export function Header() {
     //     },
     //   ],
     // },
-    {
-      label: "Partner with us",
-      link: "https://app.partnerships.opm.go.ug/RegisterPartner",
-    },
+
     {
       label: "Contact Us",
       link: "/contact",
     },
+
   ];
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-      <div className="container mx-auto px-4 py-4 md:py-8 flex items-center justify-between">
-        <Link href={"/"}>
-          <div className="flex items-center gap-2 md:gap-4">
+      <div className="container mx-auto px-4 py-2 md:py-3 flex items-center justify-between">
+        <Link href="/" className="group transition-opacity hover:opacity-90">
+          <div className="flex items-center gap-3 md:gap-4">
             <Image
               src="/logo.png"
               alt="GoU-RRMS Logo"
-              width={40}
-              height={40}
-              className="h-8 md:h-10 w-auto"
+              width={100}
+              height={100}
+              className="w-10 h-10 md:w-14 md:h-14 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+              priority
             />
-            <div className="text-xs md:text-sm">
-              <p className="text-gray-600 text-[10px] md:text-xs">
-                OPM Partnership
-              </p>
-              <p className="text-gray-600 text-[10px] md:text-xs">
+            <div className="hidden sm:block w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-gray-300 to-transparent mx-1"></div>
+            <div className="flex flex-col justify-center font-extrabold uppercase tracking-widest">
+              <span className="text-xs md:text-[15px] leading-tight text-gray-900">
+                Partnership
+              </span>
+              <span className="text-xs md:text-[15px] leading-tight text-[#eab308]">
                 Coordination &
-              </p>
-              <p className="text-gray-600 text-[10px] md:text-xs">
+              </span>
+              <span className="text-xs md:text-[15px] leading-tight text-red-600">
                 Monitoring System
-              </p>
+              </span>
             </div>
           </div>
         </Link>
@@ -117,11 +117,10 @@ export function Header() {
             >
               <Link
                 href={nav.link}
-                className={`text-sm font-medium ${
-                  pathname === nav.link
-                    ? "text-destructive border-b-2 border-destructive"
-                    : "text-gray-900 hover:text-destructive"
-                }`}
+                className={`text-sm font-medium ${pathname === nav.link
+                  ? "text-destructive border-b-2 border-destructive"
+                  : "text-gray-900 hover:text-destructive"
+                  }`}
                 onClick={() => !nav.children && setActiveDropdown(null)}
               >
                 {nav.label}
@@ -132,11 +131,10 @@ export function Header() {
                     <Link
                       key={childIndex}
                       href={child.link}
-                      className={`block px-4 py-2 text-sm ${
-                        pathname === child.link
-                          ? "text-destructive bg-gray-50"
-                          : "text-gray-900 hover:bg-gray-50 hover:text-destructive"
-                      }`}
+                      className={`block px-4 py-2 text-sm ${pathname === child.link
+                        ? "text-destructive bg-gray-50"
+                        : "text-gray-900 hover:bg-gray-50 hover:text-destructive"
+                        }`}
                     >
                       {child.label}
                     </Link>
@@ -154,12 +152,30 @@ export function Header() {
           >
             Contact Us
           </Link> */}
-          <Link
-            href="https://app.partnerships.opm.go.ug/Login"
-            className="hidden md:block px-6 md:px-8 py-2 bg-destructive text-white rounded-lg text-sm font-medium hover:bg-red-500"
-          >
-            Login
-          </Link>
+          <div className="hidden md:flex relative group items-center">
+            <Link
+              href="https://app.partnerships.opm.go.ug/Login"
+              className="px-6 md:px-7 py-2.5 bg-emerald-600 text-white rounded-full text-sm font-semibold hover:bg-emerald-700 hover:shadow-md transition-all shadow-sm"
+            >
+              Login
+            </Link>
+            <div className="absolute opacity-0 group-hover:opacity-100 transition-all duration-300 w-64 bg-gray-900 border border-gray-800 text-gray-100 text-xs leading-relaxed text-center rounded-xl shadow-2xl p-3 top-full left-1/2 transform -translate-x-1/2 mt-3 pointer-events-none z-[100]">
+              If your organisation is already profiled or onboarded on the system, login.
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 border-8 border-transparent border-b-gray-800"></div>
+            </div>
+          </div>
+          <div className="hidden md:flex relative group items-center">
+            <Link
+              href="https://app.partnerships.opm.go.ug/RegisterPartner"
+              className="px-6 md:px-7 py-2.5 bg-[#eab308] text-black rounded-full text-sm font-semibold hover:bg-[#dca807] hover:shadow-md transition-all shadow-sm"
+            >
+              Sign up
+            </Link>
+            <div className="absolute opacity-0 group-hover:opacity-100 transition-all duration-300 w-64 bg-gray-900 border border-gray-800 text-gray-100 text-xs leading-relaxed text-center rounded-xl shadow-2xl p-3 top-full left-1/2 transform -translate-x-1/2 mt-3 pointer-events-none z-[100]">
+              If your organisation has not yet been onboarded or profiled on the system, signup.
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 border-8 border-transparent border-b-gray-800"></div>
+            </div>
+          </div>
           <button
             className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -171,18 +187,16 @@ export function Header() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 md:hidden transition-opacity duration-300 ${
-          isMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black bg-opacity-50 md:hidden transition-opacity duration-300 ${isMenuOpen
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setIsMenuOpen(false)}
       />
 
       <div
-        className={`fixed right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="p-4 border-b border-gray-200">
           <button
@@ -197,11 +211,10 @@ export function Header() {
             <Link
               key={index}
               href={nav.link}
-              className={`py-2 border-b border-gray-100 text-sm font-medium ${
-                pathname === nav.link
-                  ? "text-primary"
-                  : "text-gray-900 hover:text-primary"
-              }`}
+              className={`py-2 border-b border-gray-100 text-sm font-medium ${pathname === nav.link
+                ? "text-primary"
+                : "text-gray-900 hover:text-primary"
+                }`}
               onClick={() => setIsMenuOpen(false)}
             >
               {nav.label}
@@ -209,12 +222,35 @@ export function Header() {
           ))}
           <Link
             href="https://app.partnerships.opm.go.ug/Login"
-            className="mt-4 px-6 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-yellow-600 text-center"
+            title="If your organisation is already profiled or onboarded on the system, login."
+            className="mt-4 px-6 py-2.5 bg-emerald-600 text-white rounded-full text-sm font-semibold hover:bg-emerald-700 hover:shadow-md transition-all shadow-sm text-center"
             onClick={() => setIsMenuOpen(false)}
           >
             Login
           </Link>
+          <Link
+            href="https://app.partnerships.opm.go.ug/RegisterPartner"
+            title="If your organisation has not yet been onboarded or profiled on the system, signup."
+            className="mt-3 px-6 py-2.5 bg-[#eab308] text-black rounded-full text-sm font-semibold hover:bg-[#dca807] hover:shadow-md transition-all shadow-sm text-center"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Sign up
+          </Link>
         </nav>
+      </div>
+
+      {/* 100% Width Theme Banner */}
+      <div className="w-full bg-emerald-900/80 backdrop-blur-md border-t border-emerald-800 py-2 md:py-2.5 px-4 shadow-md inset-x-0 relative z-40">
+        <div className="container mx-auto">
+          <div className="text-center">
+            <span className="text-[#eab308] font-bold uppercase tracking-widest text-[11px] md:text-[13px] mr-2">
+              Theme:
+            </span>
+            <span className="text-emerald-50 font-medium text-[12px] md:text-[14px] leading-tight">
+              Empowering coordinated, high-impact partnerships and strengthening whole-of-society contributions by Non-State Actors to national development.
+            </span>
+          </div>
+        </div>
       </div>
     </header>
   );

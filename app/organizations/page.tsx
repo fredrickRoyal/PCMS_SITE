@@ -30,7 +30,7 @@ export default function OrganizationsPage() {
   const [organizations, setOrganizations] = useState<Organization[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+
   // Filter States
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedMDA, setSelectedMDA] = useState("Office of the Prime Minister");
@@ -44,7 +44,7 @@ export default function OrganizationsPage() {
     direction: "asc" | "desc";
   } | null>(null);
 
-  const itemsPerPage = 10;
+  const itemsPerPage = 200;
 
   useEffect(() => {
     const fetchOrganizations = async () => {
@@ -66,14 +66,32 @@ export default function OrganizationsPage() {
 
         const data = await response.json();
 
+        let rawOrgs: Organization[] = [];
         if (Array.isArray(data)) {
-          setOrganizations(data);
+          rawOrgs = data;
         } else if (data && typeof data === "object" && Array.isArray(data.data)) {
           // Fallback in case the direct API structure matches our proxy wrapper
-          setOrganizations(data.data);
+          rawOrgs = data.data;
         } else {
           setError("Invalid data format received from organizations API");
+          return;
         }
+
+        const cleanStr = (val: any) => (typeof val === 'string' && val.trim().toLowerCase() === "no data provided") ? null : val;
+
+        const cleanedData = rawOrgs.map(org => ({
+          ...org,
+          organization: cleanStr(org.organization),
+          category: cleanStr(org.category),
+          subThematicArea: cleanStr(org.subThematicArea),
+          location: cleanStr(org.location),
+          date: cleanStr(org.date),
+          reportingStatus: cleanStr(org.reportingStatus),
+          mda: cleanStr(org.mda),
+          department: cleanStr(org.department),
+        }));
+
+        setOrganizations(cleanedData);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to fetch organizations data");
       } finally {
@@ -108,7 +126,7 @@ export default function OrganizationsPage() {
 
   // Combined Filtering Logic
   const filteredOrganizations = organizations.filter((org) => {
-    const matchesSearch = !searchTerm || 
+    const matchesSearch = !searchTerm ||
       (org.organization?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
       (org.category?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
       (org.location?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
@@ -160,13 +178,12 @@ export default function OrganizationsPage() {
       "Organization": (org.organization || "N/A").toUpperCase(),
       "Category": org.category || "N/A",
       "Sub-Thematic Area": org.subThematicArea || "N/A",
-      "Location": org.location || "N/A",
-      "Date": org.date || "N/A",
+      "Authorized Location of Implementation": org.location || "N/A",
     }));
 
     // Create worksheet
     const ws = XLSX.utils.json_to_sheet(exportData);
-    
+
     // Set column widths
     const wscols = [
       { wch: 5 },  // #
@@ -214,7 +231,7 @@ export default function OrganizationsPage() {
   return (
     <div className="min-h-screen bg-gray-100 p-4 md:p-8">
       <h1 className="text-3xl font-bold mb-8 text-center">
-        Authorized Partner Organizations
+        List of coordinated Non-State Actors (Who's where, for how long & doing what?)
       </h1>
 
       {/* Search and Filters Section */}
@@ -265,7 +282,7 @@ export default function OrganizationsPage() {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            
+
             <button
               onClick={handleExportExcel}
               className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
@@ -274,7 +291,7 @@ export default function OrganizationsPage() {
               Export to Excel
             </button>
           </div>
-          
+
           {(selectedMDA || selectedDept || selectedOrg || selectedCategory || searchTerm) && (
             <button
               onClick={() => {
@@ -316,8 +333,7 @@ export default function OrganizationsPage() {
                   (sortConfig.direction === "asc" ? " ↑" : " ↓")}
               </th>
               <th className="py-3 px-6 text-left">Sub-Thematic Area</th>
-              <th className="py-3 px-6 text-left">Location</th>
-              <th className="py-3 px-6 text-left">Date</th>
+              <th className="py-3 px-6 text-left">Authorized Location of Implementation</th>
             </tr>
           </thead>
           <tbody className="text-gray-600 text-sm">
@@ -331,25 +347,26 @@ export default function OrganizationsPage() {
                 </td>
                 <td className="py-4 px-6 font-medium uppercase">
                   {org.organization || (
-                    <span className="text-red-600 bg-red-50 border border-red-100 px-2 py-1 rounded-md text-[9px] font-bold inline-flex items-center gap-1 transition-all">
+                    <span className="text-orange-600 bg-orange-50 border border-orange-100 px-2 py-1 rounded-md text-[9px] font-bold inline-flex items-center gap-1 transition-all">
                       <AlertCircle size={10} />
-                      No data provided
+                      Data update required
                     </span>
                   )}
                 </td>
                 <td className="py-4 px-6">
                   {org.category || (
-                    <span className="text-red-600 bg-red-50 border border-red-100 px-2 py-1 rounded-md text-[9px] font-bold inline-flex items-center gap-1 transition-all">
+                    <span className="text-orange-600 bg-orange-50 border border-orange-100 px-2 py-1 rounded-md text-[9px] font-bold inline-flex items-center gap-1 transition-all">
                       <AlertCircle size={10} />
-                      No data provided
+                      Data update required
                     </span>
                   )}
                 </td>
                 <td className="py-4 px-6">
                   <div className="max-w-xs truncate" title={org.subThematicArea || ""}>
                     {org.subThematicArea || (
-                      <span className="text-orange-600 bg-orange-50 px-2 py-0.5 rounded text-[10px] font-bold">
-                        No data provided
+                      <span className="text-orange-600 bg-orange-50 border border-orange-100 px-2 py-1 rounded-md text-[9px] font-bold inline-flex items-center gap-1 transition-all">
+                        <AlertCircle size={10} />
+                        Data update required
                       </span>
                     )}
                   </div>
@@ -357,18 +374,12 @@ export default function OrganizationsPage() {
                 <td className="py-4 px-6">
                   <div className="max-w-xs truncate" title={org.location || ""}>
                     {org.location || (
-                      <span className="text-orange-600 bg-orange-50 px-2 py-0.5 rounded text-[10px] font-bold">
-                        No data provided
+                      <span className="text-orange-600 bg-orange-50 border border-orange-100 px-2 py-1 rounded-md text-[9px] font-bold inline-flex items-center gap-1 transition-all">
+                        <AlertCircle size={10} />
+                        Data update required
                       </span>
                     )}
                   </div>
-                </td>
-                <td className="py-4 px-6 whitespace-nowrap">
-                  {org.date || (
-                    <span className="text-orange-600 bg-orange-50 px-2 py-0.5 rounded text-[10px] font-bold">
-                      No data provided
-                    </span>
-                  )}
                 </td>
               </tr>
             ))}
