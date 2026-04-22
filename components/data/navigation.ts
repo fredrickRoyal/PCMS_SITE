@@ -5,10 +5,12 @@ interface NavItem {
 
 export const navigationLinks: NavItem[] = [
   { text: "Home", href: "/" },
-  { text: "About the System", href: "/about" },
-  { text: "Refugee Management", href: "/refugee-management" },
-  { text: "Policy/Regulations", href: "/policies" },
-  { text: "Statistics", href: "/statistics" },
-  { text: "Publications", href: "/publications" },
-  { text: "Partner with us", href: "/partner" }
+  { text: "About PCMS", href: "/about" },
+  { text: "How It Works", href: "/how-it-works" },
+  { text: "Policy & Regulations", href: "/policy" },
+  { text: "Stakeholders", href: "/stakeholders" },
+  { text: "Partners", href: "/organizations" },
+  { text: "Projects", href: "/projects" },
+  { text: "Publications", href: "/publications/reports" },
+  { text: "Contact Us", href: "/contact" },
 ];

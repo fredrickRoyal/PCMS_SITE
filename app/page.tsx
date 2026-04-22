@@ -1,18 +1,18 @@
 import { Hero } from "@/components/home/Hero";
-import { Statistics } from "@/components/home/Statistics";
 import { Folders } from "@/components/home/Folders";
-import { Map } from "@/components/home/Map";
+import { SettlementMap } from "@/components/home/Map";
 import { FAQ } from "@/components/home/FAQ";
 import Passion from "@/components/home/Passion";
+import ImpactStats from "@/components/home/ImpactStats";
 
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
       <Hero />
-      {/* <Statistics /> */}
       <Folders />
-      <Map />
+      <ImpactStats />
+      <SettlementMap />
       <Passion />
       <FAQ />
     </main>

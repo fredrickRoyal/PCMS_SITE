@@ -1,7 +1,6 @@
-import Hero  from "@/components/shared/Hero";
-
-import SystemInfo from "@/components/settlements/SystemInfo";
+import InfographicHero from "@/components/shared/InfographicHero";
 import Accordion from "@/components/shared/Accordion";
+import { MapPin } from "lucide-react";
 interface AccordionItem {
   id: string;
   title: string;
@@ -59,7 +58,14 @@ const accordionData: AccordionItem[] = [
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col text-secondary">
-      <Hero title={"Refugee Settlements in Uganda"} description={"A national landscape of safe refuge and integrated service delivery."} />
+      <InfographicHero
+        eyebrow="Sector · Department of Refugees"
+        title="Refugee Settlements"
+        titleAccent="in Uganda."
+        description="A national landscape of safe refuge and integrated service delivery — 13 gazetted settlements across 11 local government districts."
+        Icon={MapPin}
+        variant="civic"
+      />
       <div className="max-w-screen bg-white  py-24 sm:px-6 lg:px-40">
      <h1 className="font-normal text-center text-lg mb-4">SETTLEMENT PROFILE</h1>
      <div className="flex flex-col gap-4">

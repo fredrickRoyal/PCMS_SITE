@@ -3,74 +3,62 @@ import Image from 'next/image';
 
 const HowItWorks = () => {
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-surface-muted py-20">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-12">How the GoU-RRMS Works</h1>
-        
+        <div className="max-w-3xl mx-auto text-center mb-14">
+          <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-civic font-semibold mb-3">
+            <span className="inline-block w-8 h-px bg-civic" />
+            <span>The Platform</span>
+          </p>
+          <h1 className="font-display text-3xl md:text-5xl font-normal text-foreground leading-tight">
+            How PCMS Works
+          </h1>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Application Portal Card */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-4">Application Portal for Refugee Response Interventions</h2>
-              
+          <div className="bg-surface border border-border rounded-xl shadow-sm overflow-hidden">
+            <div className="p-6 md:p-8">
+              <h2 className="font-display text-xl md:text-2xl font-normal mb-4 text-foreground">Online Applications & MoU Processing</h2>
+
               <div className="relative h-64 mb-4">
                 <Image
                   src="/blog3.jpeg"
-                  alt="Refugee application process"
+                  alt="Partner completing an online application"
                   fill
                   className="object-cover rounded-lg"
                 />
               </div>
-              
-              <p className="text-gray-600 mb-6">
-                Partners wishing to implement refugee response interventions in Uganda apply
-                electronically through the GoU-RRMS. The system streamlines the approval process,
-                ensuring alignment with government policies and priorities.
+
+              <p className="text-foreground-muted mb-6 leading-relaxed">
+                Prospective partners apply online via PCMS, upload the required
+                legal and organisational documents, and are reviewed by the OPM
+                Partnership Committee. Approved applications move through MoU
+                drafting, Solicitor General clearance, and signing — all tracked
+                in the system.
               </p>
-              
-              <button className="flex items-center text-primary hover:text-primary/80 transition-colors">
-                <span>Learn More</span>
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
             </div>
           </div>
 
-          {/* Progress Tracking Card */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-4">Progress Tracking for Decision-Making</h2>
-              
-              <div className="relative h-64 mb-4 bg-gray-900 rounded-lg flex items-center justify-center">
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/video1.jpeg"
-                    alt="Progress tracking interface"
-                    fill
-                    className="object-cover opacity-80"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
-                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+          <div className="bg-surface border border-border rounded-xl shadow-sm overflow-hidden">
+            <div className="p-6 md:p-8">
+              <h2 className="font-display text-xl md:text-2xl font-normal mb-4 text-foreground">Periodic Reporting & Strategic Analytics</h2>
+
+              <div className="relative h-64 mb-4 bg-foreground rounded-lg flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/video1.jpeg"
+                  alt="PCMS analytics interface"
+                  fill
+                  className="object-cover opacity-80"
+                />
               </div>
-              
-              <p className="text-gray-600 mb-6">
-                The system tracks the implementation progress of refugee response activities by various
-                actors, providing real-time data to OPM and stakeholders for informed decision-making.
+
+              <p className="text-foreground-muted mb-6 leading-relaxed">
+                Partners submit periodic progress reports through PCMS. The
+                system consolidates contributions — including Off-Budget
+                Financing — and generates role-specific analytics for the
+                Permanent Secretary, OPM departments, and political leadership
+                to inform decision-making.
               </p>
-              
-              <button className="flex items-center text-primary hover:text-primary/80 transition-colors">
-                <span>Learn More</span>
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>

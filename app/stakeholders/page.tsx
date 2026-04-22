@@ -1,6 +1,4 @@
-import Hero from "@/components/shared/Hero";
-
-import SystemInfo from "@/components/settlements/SystemInfo";
+import { Hero } from "@/components/stakeholders/Hero";
 import Accordion from "@/components/shared/Accordion";
 
 let accordionData: AccordionItem[];
@@ -87,25 +85,20 @@ accordionData = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col text-secondary">
-      <Hero
-        title={"Our Stakeholders & Partners"}
-        description={
-          "A united front for refugee protection, service delivery, and integration."
-        }
-      />
-      <div className="max-w-screen bg-white  py-24 sm:px-6 lg:px-40">
-        <h1 className="font-normal text-center text-lg mb-4">
+    <main className="min-h-screen flex flex-col text-foreground">
+      <Hero />
+      <div className="max-w-screen bg-surface py-24 sm:px-6 lg:px-40">
+        <h1 className="font-normal text-center text-lg mb-4 text-foreground">
           CENTRAL GOVERNMENT
         </h1>
-        <p className="mb-4 text-gray-700">
+        <p className="mb-4 text-foreground-muted">
           The Office of the Prime Minister on behalf of the central Government
           coordinates through its Department of Refugees, that networks with
           other ministries to coordinate the state and non-state activities and
           services relating to refugees and refugee hosting areas in Uganda
         </p>
       </div>
-      <div className="max-w-screen bg-[#EDF0F2] min-h-screen py-24 sm:px-6 lg:px-40">
+      <div className="max-w-screen bg-surface-muted min-h-screen py-24 sm:px-6 lg:px-40">
         <Accordion data={accordionData} />
       </div>
     </main>

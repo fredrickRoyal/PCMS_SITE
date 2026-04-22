@@ -48,11 +48,16 @@ export function FAQ() {
   const selectedTopicData = faqTopics.find(topic => topic.id === selectedTopic);
 
   return (
-    <section className="py-8 md:py-16 text-secondary bg-gray-50 min-h-screen">
+    <section className="py-12 md:py-20 bg-background text-foreground">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 md:mb-8">
-          Frequently Asked Questions
-        </h2>
+        <div className="max-w-3xl mb-10">
+          <p className="text-xs uppercase tracking-widest text-civic font-semibold mb-2">
+            Help & Guidance
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-normal text-foreground leading-tight">
+            Frequently Asked Questions
+          </h2>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 max-w-6xl mx-auto">
           {/* Topics on the left */}
@@ -73,14 +78,14 @@ export function FAQ() {
                     setOpenQuestion(null);
                   }
                 }}
-                className={`w-full text-left p-4 rounded-lg cursor-pointer transition-all duration-300 ${topic.id === selectedTopic ? 'bg-gradient-to-r ' + topic.gradient + ' text-white' : 'bg-white hover:bg-gray-50'}`}
+                className={`w-full text-left p-4 rounded-lg border cursor-pointer transition-all duration-300 ${topic.id === selectedTopic ? 'bg-authority text-authority-foreground border-authority shadow-md' : 'bg-surface border-border hover:bg-surface-muted text-foreground'}`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <ArrowRight size={18} className={`transition-colors duration-300 ${topic.id === selectedTopic ? 'text-white' : 'text-gray-400'}`} />
-                  <ChevronRight size={18} className={`transition-colors duration-300 ${topic.id === selectedTopic ? 'text-white' : 'text-gray-400'}`} />
+                  <ArrowRight size={18} className={`transition-colors duration-300 ${topic.id === selectedTopic ? 'text-gold' : 'text-foreground-muted'}`} />
+                  <ChevronRight size={18} className={`transition-colors duration-300 ${topic.id === selectedTopic ? 'text-authority-foreground' : 'text-foreground-muted'}`} />
                 </div>
                 <h3 className="font-medium mb-1">{topic.title}</h3>
-                <p className={`text-sm transition-colors duration-300 ${topic.id === selectedTopic ? 'text-white/90' : 'text-gray-500'}`}>
+                <p className={`text-sm transition-colors duration-300 ${topic.id === selectedTopic ? 'text-authority-foreground/85' : 'text-foreground-muted'}`}>
                   {topic.description}
                 </p>
               </div>
@@ -92,21 +97,22 @@ export function FAQ() {
             {selectedTopicData?.questions.map((item) => (
               <div
                 key={item.id}
-                className="border border-gray-200 rounded-lg bg-white overflow-hidden transition-all duration-300"
+                className="border border-border rounded-lg bg-surface overflow-hidden transition-all duration-300"
               >
                 <button
+                  type="button"
                   onClick={() => setOpenQuestion(openQuestion === item.id ? null : item.id)}
-                  className="flex items-center justify-between w-full p-4 text-left"
+                  className="flex items-center justify-between w-full p-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <span className="font-medium text-gray-900">{item.question}</span>
+                  <span className="font-medium text-foreground">{item.question}</span>
                   <ChevronDown
                     size={18}
-                    className={`transform transition-transform duration-300 ${openQuestion === item.id ? "rotate-180" : ""}`}
+                    className={`transform transition-transform duration-300 text-foreground-muted ${openQuestion === item.id ? "rotate-180" : ""}`}
                   />
                 </button>
                 {openQuestion === item.id && (
-                  <div className="px-4 pb-4 animate-fadeIn">
-                    <p className="text-gray-600">{item.answer}</p>
+                  <div className="px-4 pb-4 animate-fadeIn border-t border-border">
+                    <p className="text-foreground-muted pt-3">{item.answer}</p>
                   </div>
                 )}
               </div>

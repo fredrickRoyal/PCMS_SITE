@@ -2,32 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================
+   PCMS design tokens — institutional + modern.
+   HSL triplets so Tailwind can compose with opacity modifiers.
+   ========================================================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --surface: 0 0% 100%;
+  --surface-muted: 210 20% 98%;
+  --border: 214 32% 91%;
+  --ring: 158 64% 25%;
+  --foreground-muted: 215 16% 38%;
+
+  /* Institutional accents */
+  --authority: 158 64% 16%;          /* deep emerald — OPM/gov primary */
+  --authority-foreground: 151 81% 96%;
+  --gold: 38 72% 42%;                /* refined gold, less electric than yellow */
+  --gold-foreground: 32 100% 97%;
+  --civic: 0 62% 34%;                /* deep institutional red */
+  --civic-foreground: 0 86% 97%;
+
+  /* Governmental infographic palette (theme-adaptive).
+     Light mode = document / parchment feel: light bg, navy ink, refined gold.
+     Dark mode (below) = official brief: deep navy, slate, vivid Uganda gold. */
+  --gi-bg: 42 35% 96%;               /* warm parchment */
+  --gi-surface: 0 0% 100%;           /* node fill */
+  --gi-node-fill: 0 0% 100%;
+  --gi-ink: 216 65% 11%;             /* deep navy text */
+  --gi-slate: 215 14% 55%;
+  --gi-slate-border: 214 22% 78%;
+  --gi-text: 215 25% 27%;
+  --gi-label: 215 20% 45%;
+  --gi-gold: 42 85% 38%;             /* darker gold readable on light */
+  --gi-gold-bright: 48 100% 50%;     /* #FFCC00 — hub ring only */
+  --gi-gold-halo: 45 95% 70%;
+  --gi-button-ink: 216 65% 11%;
+
+  /* =========================================================
+     PCMS institutional palette — Uganda flag + letterhead feel.
+     Scoped under `pcms-*` so it doesn't collide with the
+     authority/gold/civic tokens used by earlier components.
+     ========================================================= */
+  --pcms-green: 148 82% 24%;         /* #0B6E3A — primary institutional */
+  --pcms-green-hover: 148 82% 19%;   /* deeper on hover in light */
+  --pcms-gold: 52 98% 50%;           /* #FCDC04 — ceremonial gold */
+  --pcms-gold-muted: 43 89% 38%;     /* #B8860B — hairlines, ornament */
+  --pcms-red: 0 100% 43%;            /* #D90000 — alerts only */
+  --pcms-ink: 0 0% 10%;              /* #1A1A1A — body text */
+  --pcms-cream: 45 40% 96%;          /* #FAF8F2 — warm off-white */
+  --pcms-cream-muted: 45 30% 92%;    /* slightly dimmed cream */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+.dark {
+  --background: 222 47% 6%;
+  --foreground: 210 20% 98%;
+  --surface: 222 47% 11%;
+  --surface-muted: 217 33% 17%;
+  --border: 215 25% 22%;
+  --ring: 158 64% 52%;
+  --foreground-muted: 215 20% 65%;
 
-:root {
-  --font-urbanist: 'Urbanist', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
+  --authority: 158 64% 52%;
+  --authority-foreground: 158 84% 10%;
+  --gold: 44 92% 58%;
+  --gold-foreground: 38 92% 10%;
+  --civic: 0 72% 58%;
+  --civic-foreground: 0 72% 10%;
+
+  /* Infographic — dark mode = official brief (navy + slate + vivid gold) */
+  --gi-bg: 216 65% 11%;              /* #0A192F */
+  --gi-surface: 219 45% 16%;         /* #111F3A */
+  --gi-node-fill: 220 42% 17%;       /* #15233F */
+  --gi-ink: 0 0% 100%;
+  --gi-slate: 215 20% 32%;
+  --gi-slate-border: 215 22% 28%;
+  --gi-text: 213 27% 82%;
+  --gi-label: 215 20% 65%;
+  --gi-gold: 48 100% 50%;            /* #FFCC00 */
+  --gi-gold-bright: 48 100% 50%;
+  --gi-gold-halo: 48 100% 50%;
+  --gi-button-ink: 216 65% 11%;
+
+  /* PCMS institutional palette — dark mode
+     Background shifts to warm charcoal; green brightens for
+     contrast; gold stays saturated (don't desaturate gold). */
+  --pcms-green: 148 55% 42%;
+  --pcms-green-hover: 148 55% 48%;
+  --pcms-gold: 52 98% 50%;
+  --pcms-gold-muted: 43 75% 52%;
+  --pcms-red: 0 85% 58%;
+  --pcms-ink: 45 30% 94%;
+  --pcms-cream: 144 9% 11%;          /* #1A1F1C — warm charcoal */
+  --pcms-cream-muted: 144 9% 15%;
 }
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 font-urbanist;
-    background: var(--background);
-    color: var(--foreground);
+    @apply font-urbanist antialiased;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins font-bold;
+  h1, h2, h3, h4 {
+    @apply font-display;
+    letter-spacing: -0.01em;
+  }
+
+  h5, h6 {
+    @apply font-urbanist font-semibold;
+  }
+
+  /* Smooth theme swap without flashing transitions */
+  body, body * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 200ms;
   }
 }
 
@@ -35,12 +125,20 @@
   .btn-primary {
     @apply px-4 py-2 bg-yellow-500 text-white rounded-md font-medium hover:bg-yellow-600 transition-colors;
   }
-  
+
   .btn-secondary {
     @apply px-4 py-2 bg-white text-gray-900 border border-gray-200 rounded-md font-medium hover:bg-gray-50 transition-colors;
   }
-  
+
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Subtle governmental gradient — used on hero backdrops and section wash */
+  .bg-mesh-authority {
+    background-image:
+      radial-gradient(at 18% 20%, hsl(var(--authority) / 0.35) 0px, transparent 45%),
+      radial-gradient(at 82% 0%, hsl(var(--gold) / 0.25) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, hsl(var(--civic) / 0.18) 0px, transparent 55%);
   }
 }
