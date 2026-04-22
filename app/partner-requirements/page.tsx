@@ -1,69 +1,18 @@
 "use client";
-import Hero2 from "@/components/shared/Hero2";
+import InfographicHero from "@/components/shared/InfographicHero";
 import Accordion from "@/components/shared/Accordion";
+import EntityTypeWizard from "@/components/partner-requirements/EntityTypeWizard";
 import {
-  DocumentList,
   RequirementStep,
   DataPrivacySection,
 } from "@/components/partner-requirements/RequirementComponents";
-import {
-  FileCheck,
-  Users,
-  Building2,
-  Target,
-  BookOpen,
-  Wallet,
-} from "lucide-react";
+import { Target, BookOpen, ClipboardCheck } from "lucide-react";
 
 export default function PartnershipRequirementsPage() {
   const requirementsData = [
     {
-      id: "org-profile",
-      title: "1. Organisation Profile",
-      nodeComponent: (
-        <RequirementStep
-          title="Required Information"
-          icon={<Building2 className="w-6 h-6" />}
-          items={[
-            "Name of the Organisation/Institution",
-            "Type of Organisation/Institution",
-            "Physical Address (Headquarters and field offices)",
-            "Official Organisation Contact Details",
-            "Key Contact Person(s) and Titles",
-            "Organisational Background and Structure",
-            "Organisational Chart (Organogram)",
-            "List of Board of Directors",
-          ]}
-        />
-      ),
-    },
-    {
-      id: "legal",
-      title: "2. Legal Documentation",
-      nodeComponent: (
-        <div className="space-y-6">
-          <RequirementStep
-            title="NGO Requirements"
-            icon={<FileCheck className="w-6 h-6" />}
-            items={[
-              "Certificate of Registration from NGO Bureau",
-              "Permit to Operate issued by NGO Bureau",
-            ]}
-          />
-          <DocumentList
-            documents={[
-              "Private Sector: Certificate of Registration/Incorporation",
-              "CBOs: Certificate of Registration & Constitution",
-              "Government Institutions: Letter of Intent",
-              "Development Partners: Financing Agreements & Accreditation",
-            ]}
-          />
-        </div>
-      ),
-    },
-    {
       id: "project",
-      title: "3. Project Information",
+      title: "1. Project Information",
       nodeComponent: (
         <RequirementStep
           title="Project Details Required"
@@ -82,14 +31,14 @@ export default function PartnershipRequirementsPage() {
     },
     {
       id: "strategic",
-      title: "4. Strategic Alignment",
+      title: "2. Strategic Alignment",
       nodeComponent: (
         <RequirementStep
           title="Alignment Requirements"
           icon={<BookOpen className="w-6 h-6" />}
           items={[
             "Vision 2040",
-            "National Development Plan (NDP)",
+            "National Development Plan IV (NDP IV)",
             "District Development Plan (DDP)",
             "Refugee Settlement Transformation Agenda",
             "Relevant Sector Plans",
@@ -144,9 +93,13 @@ export default function PartnershipRequirementsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <Hero2
-        title="Requirements for Partnership"
-        subtitle="Guidelines and requirements for organizations seeking to partner with OPM"
+      <InfographicHero
+        eyebrow="Before you apply"
+        title="Requirements for"
+        titleAccent="Partnership."
+        description="Guidelines and documentation every organisation prepares before starting a PCMS application — tailored to entity type."
+        Icon={ClipboardCheck}
+        variant="gold"
       />
 
       {/* Main Content */}
@@ -164,16 +117,24 @@ export default function PartnershipRequirementsPage() {
             </p>
           </div>
 
-          {/* Requirements Section */}
+          {/* Entity-type wizard */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">
               Registration Requirements
             </h3>
             <div className="mb-6 bg-orange-50 p-4 rounded-lg">
               <p className="text-gray-700">
-              All organizations seeking partnership with the Office of the Prime Minister are required to complete the registration process and submit all necessary documentation
+                All organisations seeking partnership with the Office of the Prime Minister complete the registration process through PCMS. Requirements differ by entity type — start by selecting yours below.
               </p>
             </div>
+            <EntityTypeWizard />
+          </div>
+
+          {/* Project & Strategic Alignment accordion */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">
+              Project & Alignment Requirements
+            </h3>
             <Accordion data={requirementsData} />
           </div>
 

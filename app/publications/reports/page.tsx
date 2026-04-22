@@ -1,8 +1,9 @@
 "use client"
 
-import Hero2 from "@/components/shared/Hero2";
+import InfographicHero from "@/components/shared/InfographicHero";
 import Accordion from "@/components/shared/Accordion"
 import  Link  from "next/link";
+import { PlayCircle } from "lucide-react";
 
 let accordionData : AccordionItem[];
 interface AccordionItem {
@@ -31,7 +32,14 @@ accordionData = [
 
 export default function ReportsPage() {
   return (<>
-        <Hero2 title={"Learning Videos of OPM Partnership Coordination & Monitoring System"}  />   
+        <InfographicHero
+          eyebrow="Publications · Training"
+          title="Learning"
+          titleAccent="Videos."
+          description="Recorded walkthroughs and training sessions for partners using PCMS."
+          Icon={PlayCircle}
+          variant="authority"
+        />   
     <div className="container mx-auto px-4 py-8">
       <Accordion data={accordionData} />
     </div>

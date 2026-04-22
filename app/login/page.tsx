@@ -30,16 +30,16 @@ export default function LoginPage() {
           <div className="mb-40">
           <Link href={"/"}>
         <div className="flex flex-row items-center gap-2 md:gap-4">
-          <Image 
-            src="/logo.png" 
-            alt="GoU-RRMS Logo" 
-            width={40} 
-            height={40} 
+          <Image
+            src="/logo.png"
+            alt="PCMS Logo"
+            width={40}
+            height={40}
             className="h-8 md:h-10 w-auto"
           />
           <div className="text-xs md:text-sm">
-            <p className="text-primary text-[10px] md:text-xs">The Government of Uganda</p>
-            <p className="text-primary text-[10px] md:text-xs">Refugee Response</p>
+            <p className="text-primary text-[10px] md:text-xs">Partnership</p>
+            <p className="text-primary text-[10px] md:text-xs">Coordination &</p>
             <p className="text-primary text-[10px] md:text-xs">Monitoring System</p>
           </div>
         </div>

@@ -14,32 +14,32 @@ const partners: Partner[] = [
     id: 1,
     name: 'Partner 1',
     logo: '/logoplaceholder.png',
-    alt: 'Partner 1 Logo'
+    alt: 'Partner 1 Logo',
   },
   {
     id: 2,
     name: 'Partner 2',
     logo: '/logoplaceholder.png',
-    alt: 'Partner 2 Logo'
+    alt: 'Partner 2 Logo',
   },
   {
     id: 3,
     name: 'Partner 3',
     logo: '/logoplaceholder.png',
-    alt: 'Partner 3 Logo'
+    alt: 'Partner 3 Logo',
   },
   {
     id: 4,
     name: 'Partner 4',
     logo: '/logoplaceholder.png',
-    alt: 'Partner 4 Logo'
+    alt: 'Partner 4 Logo',
   },
   {
     id: 5,
     name: 'Partner 5',
     logo: '/logoplaceholder.png',
-    alt: 'Partner 5 Logo'
-  }
+    alt: 'Partner 5 Logo',
+  },
 ];
 
 const Partners = () => {

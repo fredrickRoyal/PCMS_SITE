@@ -33,8 +33,8 @@ export default function ProjectsPage() {
 
   // Filter States
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedMDA, setSelectedMDA] = useState("Office of the Prime Minister");
-  const [selectedDept, setSelectedDept] = useState("Refugee Response, Coordination and Management");
+  const [selectedMDA, setSelectedMDA] = useState("");
+  const [selectedDept, setSelectedDept] = useState("");
   const [selectedOrg, setSelectedOrg] = useState("");
   const [selectedTheme, setSelectedTheme] = useState("");
 

@@ -1,12 +1,12 @@
 "use client";
-import Hero2 from "@/components/shared/Hero2";
+import InfographicHero from "@/components/shared/InfographicHero";
 import Accordion from "@/components/shared/Accordion";
 import {
   StatCard,
   InfoBox,
   Alert,
 } from "@/components/support-coordination/CoordinationComponents";
-import { Target, Users, Coins, Crown } from "lucide-react";
+import { Target, Users, Coins, Crown, HandHeart } from "lucide-react";
 
 export default function SupportCoordinationPage() {
   const stats = [
@@ -111,11 +111,21 @@ export default function SupportCoordinationPage() {
   ];
   return (
     <main>
-      <Hero2
-        title="Support Government Coordination"
-        subtitle="Join us in strengthening Uganda's refugee response coordination"
-        imageSrc="/about.jpeg"
+      <InfographicHero
+        eyebrow="Sector · Department of Refugees"
+        title="Support Refugee Response"
+        titleAccent="Coordination."
+        description="Join us in strengthening Uganda's refugee response — one of the coordination mandates supported by PCMS."
+        Icon={HandHeart}
+        variant="civic"
       />
+      <div className="bg-emerald-900 text-white py-3 px-4 text-center text-sm">
+        This page focuses on the Department of Refugees.{" "}
+        <a href="/how-it-works" className="underline hover:text-yellow-300">
+          See how partnership works across OPM
+        </a>
+        .
+      </div>
       <div className="container mx-auto px-4 py-12">
         {/* Introduction */}
         <div className="mb-12">
