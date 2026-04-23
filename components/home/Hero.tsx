@@ -48,26 +48,26 @@ export function Hero() {
       <div className="absolute inset-0 bg-mesh-authority mix-blend-multiply dark:mix-blend-normal dark:opacity-70 z-[1]" />
 
       {/* Readability veil behind copy — gradient, softer on right */}
-      <div className="absolute inset-0 z-[2] pointer-events-none bg-gradient-to-r from-background/90 via-background/60 to-transparent dark:from-background/85 dark:via-background/50" />
+      {/* <div className="absolute inset-0 z-[2] pointer-events-none bg-gradient-to-r from-background/90 via-background/60 to-transparent dark:from-background/85 dark:via-background/50" /> */}
 
       <div className="relative z-20 h-full flex flex-col justify-between py-10 md:py-20 flex-1">
         {/* Headline */}
         <div className="max-w-3xl">
-          <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-civic font-semibold mb-4">
+          {/* <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-civic font-semibold mb-4">
             <span className="inline-block w-8 h-px bg-civic" />
             <span>Office of the Prime Minister</span>
-          </p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-normal text-foreground leading-[1.05] tracking-tight mb-4 md:mb-6">
+          </p> */}
+          {/* <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-normal text-foreground leading-[1.05] tracking-tight mb-4 md:mb-6">
             Coordinating Government partnerships{' '}
             <span className="text-authority italic">
               with Non-State Actors.
             </span>
-          </h1>
-          <p className="text-foreground/80 text-base md:text-lg max-w-2xl leading-relaxed">
+          </h1> */}
+          {/* <p className="text-foreground/80 text-base md:text-lg max-w-2xl leading-relaxed">
             PCMS is the single platform to apply for, track, report on and
             coordinate partnerships across every government Ministries,
             Departments, and Agencies (MDA's).
-          </p>
+          </p> */}
         </div>
 
         {/* CTA cards */}
