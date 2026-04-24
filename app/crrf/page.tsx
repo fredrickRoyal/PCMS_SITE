@@ -1,5 +1,5 @@
 "use client";
-import Hero2 from "@/components/shared/Hero2";
+import InfographicHero from "@/components/shared/InfographicHero";
 import Accordion from "@/components/shared/Accordion";
 import {
   SuccessStory,
@@ -13,6 +13,7 @@ import {
   Handshake,
   BookOpen,
   CheckCircle2,
+  HeartHandshake,
 } from "lucide-react";
 
 export default function CRRFPage() {
@@ -91,11 +92,23 @@ export default function CRRFPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <Hero2
-        title="The Comprehensive Refugee Response Framework (CRRF)"
-        subtitle="Uganda sets the global standard by redefining refugee response, shifting from short-term relief to lasting development"
-        imageSrc="/about.jpeg"
+      <InfographicHero
+        eyebrow="Sector · Department of Refugees"
+        title="The Comprehensive"
+        titleAccent="Refugee Response Framework."
+        description="Uganda sets the global standard by redefining refugee response — shifting from short-term relief to lasting development."
+        Icon={HeartHandshake}
+        variant="civic"
       />
+
+      {/* Sector context */}
+      <div className="bg-emerald-900 text-white py-3 px-4 text-center text-sm">
+        CRRF is one of several coordination mandates supported by PCMS. Explore{" "}
+        <a href="/how-it-works" className="underline hover:text-yellow-300">
+          how partnership works across OPM
+        </a>
+        .
+      </div>
 
       {/* Main Content */}
       <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">

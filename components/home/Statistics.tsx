@@ -9,13 +9,13 @@ export function Statistics() {
         <div className="flex flex-col md:flex-row w-full gap-8 md:gap-0">
           <div className="md:pr-40">
                   <h2 className="text-2xl md:text-3xl font-[500] text-secondary mb-4 md:mb-8 uppercase tracking-wider">
-                    Uganda's Refugee Response Monitoring E-System
+                    Partnership Coordination & Monitoring System
                   </h2>
-                  <p className="text-secondary text-sm md:text-base">Developed by the Office of the Prime Minister (OPM), supports and strengthens the coordination, monitoring, and reporting of refugee programs across Uganda. Tailored to GoU sectors (Health, Education, Energy, JLOS, Lands, Security, etc.), it enables partners to apply for interventions and tracks progress for informed decision-making.</p>
-                  
+                  <p className="text-secondary text-sm md:text-base">Developed by the Office of the Prime Minister (OPM), PCMS coordinates, monitors and reports on partnerships with Non-State Actors across OPM departments — supporting alignment with NDP IV, Vision 2040 and sector plans, and making Off-Budget Financing visible for planning and accountability.</p>
+
           </div>
           <div className="min-w-full md:min-w-[440px] flex">
-            <h1 className="text-5xl md:text-7xl font-urbanist text-secondary font-normal">Welcome to GoU-RRMS</h1>
+            <h1 className="text-5xl md:text-7xl font-urbanist text-secondary font-normal">Welcome to PCMS</h1>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-8">

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Flag from "../Flag";
-import { Cross, FolderClosed, X } from "lucide-react";
+import { X } from "lucide-react";
 
 interface CardData {
   title: string;
@@ -43,71 +43,83 @@ export default function Passion() {
   const [selectedCard, setSelectedCard] = useState<CardData | null>(null);
 
   return (
-    <section className="bg-[#EDF0F2] py-8 md:py-16 px-4">
+    <section className="bg-surface-muted py-16 md:py-24 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-12 mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl text-secondary font-normal">
-            Uganda Refugee News and Updates
-          </h2>
-          <div className="">
-            <Flag />
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-12 mb-10 md:mb-14">
+          <div className="max-w-2xl">
+            <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-civic font-semibold mb-3">
+              <span className="inline-block w-8 h-px bg-civic" />
+              <span>From the Department of Refugees</span>
+            </p>
+            <h2 className="font-display text-3xl md:text-5xl text-foreground font-normal leading-tight">
+              News & Updates{" "}
+              <span className="text-authority italic">from OPM partnerships.</span>
+            </h2>
           </div>
-          <p className="text-secondary/50 text-sm max-w-full md:max-w-96 mb-6 md:mb-8">
-            Partnerships and Coordination to offer Protection
-            Services/Assistance.
-          </p>
+          <div className="flex items-end gap-6">
+            <p className="text-foreground-muted text-sm max-w-80">
+              Featured updates from partnerships coordinated through PCMS. More departments and sectors coming soon.
+            </p>
+            <div className="hidden md:block flex-shrink-0">
+              <Flag />
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg p-8 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
+          {cards.map((card) => (
+            <button
+              key={card.title}
+              type="button"
+              className="text-left bg-surface border border-border rounded-xl p-6 overflow-hidden shadow-sm hover:shadow-lg hover:border-authority/40 transition-all duration-300 cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               onClick={() => setSelectedCard(card)}
+              aria-label={`Read more: ${card.title}`}
             >
-              <h3 className="text-lg font-semibold mb-2 text-secondary line-clamp-3 transition-colors">
-                {card.title}
-              </h3>
-              <div className="relative rounded-xl overflow-hidden h-48">
+              <div className="relative rounded-lg overflow-hidden h-48 mb-4">
                 <Image
                   src={card.image || "/placeholder-image.jpg"}
                   alt={card.title}
                   fill
-                  className="object-cover rounded-xl"
+                  className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
                 />
               </div>
-              <div className="text-xs">
-                <p className="text-secondary/50 mt-4 line-clamp-3">
-                  {card.description}
-                </p>
-                <p className="text-blue-600 mt-4 font-medium">Learn More</p>
-              </div>
-            </div>
+              <h3 className="font-display text-lg font-normal mb-2 text-foreground line-clamp-3 leading-snug">
+                {card.title}
+              </h3>
+              <p className="text-sm text-foreground-muted line-clamp-3 mb-3">
+                {card.description}
+              </p>
+              <p className="text-xs font-semibold text-authority group-hover:text-civic transition-colors">
+                Read more →
+              </p>
+            </button>
           ))}
         </div>
 
         {selectedCard && (
           <div
-            className="fixed text-secondary inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50"
             onClick={() => setSelectedCard(null)}
           >
             <div
-              className="bg-white rounded-lg max-w-2xl w-full p-6 relative"
+              className="bg-surface border border-border text-foreground rounded-xl max-w-2xl w-full p-6 relative shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="absolute top-4 right-4 text-2xl text-secondary/50 hover:text-secondary transition-colors"
+                type="button"
+                aria-label="Close"
+                className="absolute top-4 right-4 text-foreground-muted hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded"
                 onClick={() => setSelectedCard(null)}
               >
-                <X size={25} className="hover:rotate-90 duration-300" />
+                <X size={22} className="hover:rotate-90 duration-300" />
               </button>
-              <h2 className="text-2xl font-bold mb-4">{selectedCard.title}</h2>
+              <h2 className="font-display text-2xl md:text-3xl font-normal mb-4 pr-8 leading-tight">{selectedCard.title}</h2>
               <img
                 src={selectedCard.image || "/placeholder-image.jpg"}
                 alt={selectedCard.title}
                 className="w-full h-auto rounded-lg mb-4"
               />
-              <p className="text-gray-600  mb-6">{selectedCard.description}</p>
+              <p className="text-foreground-muted mb-6 leading-relaxed">{selectedCard.description}</p>
             </div>
           </div>
         )}

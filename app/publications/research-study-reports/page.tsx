@@ -1,14 +1,23 @@
-"use client"
+import InfographicHero from "@/components/shared/InfographicHero";
+import { BookOpen } from "lucide-react";
 
 export default function ResearchStudyReportsPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Research Study Reports</h1>
-      <div className="prose max-w-none">
-        <p className="text-gray-600 mb-4">
-          Explore detailed research study reports on refugee-related topics and humanitarian initiatives.
+    <div>
+      <InfographicHero
+        eyebrow="Publications · Research"
+        title="Research Study"
+        titleAccent="Reports."
+        description="Detailed research studies commissioned and reviewed by the OPM Department of Refugees."
+        Icon={BookOpen}
+        variant="authority"
+      />
+      <div className="container mx-auto px-4 py-16">
+        <p className="text-foreground-muted max-w-2xl leading-relaxed">
+          Explore detailed research study reports on refugee response and
+          partnership-related topics. New reports are added as they are cleared
+          for publication.
         </p>
-        {/* Add research study reports listing or content here */}
       </div>
     </div>
   );

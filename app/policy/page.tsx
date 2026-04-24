@@ -1,7 +1,6 @@
-import Hero  from "@/components/shared/Hero";
-
-import SystemInfo from "@/components/settlements/SystemInfo";
+import InfographicHero from "@/components/shared/InfographicHero";
 import Accordion from "@/components/shared/Accordion";
+import { Scale } from "lucide-react";
 
 
 let accordionData: AccordionItem[];
@@ -22,7 +21,7 @@ accordionData = [
   },
   {
     id: '2',
-    title: 'THE INTEGRATION OF REFUGEE MANAGEMANT AND PROTECTION INTO THE NDPII',
+    title: 'THE INTEGRATION OF REFUGEE MANAGEMENT AND PROTECTION INTO NDP IV',
     description: 'The Permanent Secretary and Commissioner for Refugees oversee day-to-day operations and policy implementation.',
     imageSrc: '/home.jpeg'
   },
@@ -43,17 +42,24 @@ accordionData = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col text-secondary">
-      <Hero title={"Policy & Regulatory Frameworks"} description={"Upholding rights, ensuring safety, and strengthening refugee governance."} />
-     <div className="max-w-screen bg-white  py-24 sm:px-6 lg:px-40">
-     <h1 className="font-normal text-center text-lg mb-4">POLICY, REGULATIONS AND PROCEDURES</h1>
-        <p className="mb-4 text-gray-700">Uganda’s refugee policy is anchored in human dignity, inclusion, and self-reliance. This section outlines key national laws, government frameworks, and international treaties that govern the protection and management of refugees.</p>
-       
+    <main className="min-h-screen flex flex-col text-foreground">
+      <InfographicHero
+        eyebrow="National Frameworks"
+        title="Policy & Regulatory"
+        titleAccent="Frameworks."
+        description="Upholding rights, ensuring safety, and strengthening governance — the national laws and international instruments that anchor refugee protection and partnership coordination."
+        Icon={Scale}
+        variant="civic"
+      />
+     <div className="max-w-screen bg-surface py-24 sm:px-6 lg:px-40">
+       <h1 className="font-normal text-center text-lg mb-4 text-foreground">POLICY, REGULATIONS AND PROCEDURES</h1>
+        <p className="mb-4 text-foreground-muted">Uganda’s refugee policy is anchored in human dignity, inclusion, and self-reliance. This section outlines key national laws, government frameworks, and international treaties that govern the protection and management of refugees.</p>
+
      </div>
-      <div className="max-w-screen bg-[#EDF0F2] min-h-screen py-24 sm:px-6 lg:px-40">
+      <div className="max-w-screen bg-surface-muted min-h-screen py-24 sm:px-6 lg:px-40">
       <Accordion data={accordionData} />
       </div>
-  
+
     </main>
   );
 }

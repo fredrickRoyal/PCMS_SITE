@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
-import { headers } from "next/headers";
 
 export async function GET() {
   try {
-    const apiKey = "f47ac10b-58cc-4372-a567-0e02b2c3d479";
+    const apiKey = process.env.URRMS_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { message: "URRMS_API_KEY is not configured", status: false },
+        { status: 500 }
+      );
+    }
 
     const response = await fetch(
       "https://api.partnerships.opm.go.ug/ProjectManagement/projectSummary/thematicBudgetInvestment?accountType=MANAGEMENT",

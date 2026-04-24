@@ -1,43 +1,71 @@
-import { ArrowRight, LucideChevronRight, MoveRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import Flag from "../Flag";
 
 interface HeroProps {
   title: string;
   subtitle?: string;
   imageSrc?: string;
+  imageAlt?: string;
+  eyebrow?: string;
 }
 
 export default function Hero2({
   title,
   subtitle,
   imageSrc = "/home.jpeg",
-}: HeroProps) {
+  imageAlt,
+  eyebrow,
+}: Readonly<HeroProps>) {
   return (
-    <section className="relative bg-orange-400 min-w-screen  min-h-[80%] flex justify-center px-4 md:py-24 md:px-24">
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
+    <section className="relative min-h-[55vh] md:min-h-[65vh] flex justify-center px-4 py-16 md:py-28 md:px-24 overflow-hidden bg-background">
+      {/* Photo */}
       <Image
         src={imageSrc}
-        alt="Refugee mother and child"
+        alt={imageAlt ?? title}
         fill
-        className="object-cover grayscale"
+        className="object-cover"
         priority
       />
-      <div className="relative z-10 px-4 py-12 h-full flex flex-col items-center justify-center">
-        <h1 className="font-manrope text-3xl md:text-4xl pb-4 md:pb-4 font-semibold text-white text-center">
+
+      {/* Governmental gradient wash */}
+      <div className="absolute inset-0 bg-mesh-authority mix-blend-multiply z-[1]" />
+
+      {/* Readability veil */}
+      <div className="absolute inset-0 z-[2] bg-gradient-to-b from-black/20 via-black/55 to-black/70" />
+
+      <div className="relative z-10 px-4 py-8 h-full flex flex-col items-center justify-center text-center">
+        {eyebrow && (
+          <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold font-semibold mb-4">
+            <span className="inline-block w-8 h-px bg-gold" />
+            <span>{eyebrow}</span>
+          </p>
+        )}
+        <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-normal text-white leading-[1.1] tracking-tight max-w-4xl">
           {title}
         </h1>
         {subtitle && (
-          <p className="text-lg md:text-xl text-white/90 text-center max-w-3xl">
+          <p className="mt-4 md:mt-6 text-base md:text-lg text-white/85 max-w-3xl leading-relaxed">
             {subtitle}
           </p>
         )}
       </div>
 
-      <div className="absolute bottom-0 right-0 md:right-96 z-10">
+      <div className="absolute bottom-4 right-4 md:right-24 z-10 opacity-60">
         <Flag />
       </div>
+
+      {/* Organic wave divider */}
+      <svg
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 right-0 z-10 w-full text-background"
+        viewBox="0 0 1440 60"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,30 C240,60 480,0 720,25 C960,50 1200,10 1440,40 L1440,60 L0,60 Z"
+          fill="currentColor"
+        />
+      </svg>
     </section>
   );
 }
