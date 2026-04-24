@@ -170,7 +170,6 @@ export default function OrganizationsPage() {
   );
 
   const handleExportExcel = () => {
-    // Prepare data for export
     const exportData = sortedOrganizations.map((org, index) => ({
       "#": index + 1,
       "MDA": org.mda || "N/A",
@@ -179,6 +178,7 @@ export default function OrganizationsPage() {
       "Category": org.category || "N/A",
       "Sub-Thematic Area": org.subThematicArea || "N/A",
       "Authorized Location of Implementation": org.location || "N/A",
+      "Implementation period (renewable upon request or successful security clearance)": org.date || "Data update required",
     }));
 
     // Create worksheet
@@ -334,6 +334,7 @@ export default function OrganizationsPage() {
               </th>
               <th className="py-3 px-6 text-left">Sub-Thematic Area</th>
               <th className="py-3 px-6 text-left">Authorized Location of Implementation</th>
+              <th className="py-3 px-6 text-left min-w-[200px]">Implementation period (renewable upon request or successful security clearance)</th>
             </tr>
           </thead>
           <tbody className="text-gray-600 text-sm">
@@ -380,6 +381,14 @@ export default function OrganizationsPage() {
                       </span>
                     )}
                   </div>
+                </td>
+                <td className="py-4 px-6">
+                  {org.date || (
+                    <span className="text-orange-600 bg-orange-50 border border-orange-100 px-2 py-1 rounded-md text-[9px] font-bold inline-flex items-center gap-1 transition-all">
+                      <AlertCircle size={10} />
+                      Data update required
+                    </span>
+                  )}
                 </td>
               </tr>
             ))}
