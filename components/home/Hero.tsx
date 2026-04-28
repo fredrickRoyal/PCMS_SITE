@@ -37,9 +37,8 @@ export function Hero() {
           src={s.src}
           alt={s.alt}
           fill
-          className={`object-cover object-[75%_center] transition-opacity duration-[1200ms] ${
-            i === slide ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`object-cover object-[75%_center] transition-opacity duration-[1200ms] ${i === slide ? 'opacity-100' : 'opacity-0'
+            }`}
           priority={i === 0}
         />
       ))}
@@ -79,12 +78,10 @@ export function Hero() {
             >
               <div className="relative">
                 <h3 className="text-lg font-semibold mb-2 leading-tight">
-                  Partner with Us
+                  Requirements for partnership
                 </h3>
                 <p className="text-sm font-light text-gold-foreground/90">
-                  Apply for partnership with the Government of Uganda — review
-                  requirements, submit your organisation profile, and track your
-                  MoU end-to-end.
+                  All organizations seeking to partner with the Government of Uganda must first be duly registered or authorized by the relevant government registration authorities. Requiremenrs for partnership process is then facilitated through the PCMS...
                 </p>
               </div>
               <div className="flex justify-end mt-4">
@@ -98,11 +95,10 @@ export function Hero() {
             >
               <div className="relative">
                 <h3 className="text-lg font-semibold mb-2 leading-tight">
-                  Browse Partners
+                  List of partners (Who's where,doing what & for how long?)
                 </h3>
-                <p className="text-sm font-light text-civic-foreground/90 line-clamp-3">
-                  See every coordinated Non-State Actor — who they are, where
-                  they operate, and which OPM department they partner with.
+                <p className="text-sm font-light text-civic-foreground/90">
+                  Non-State Actors work in partnership with the government to implement the national development agenda and support humanitarian responses, with the government playing a central coordinating role in this collaboration...
                 </p>
               </div>
               <div className="flex justify-end mt-4">
@@ -116,11 +112,10 @@ export function Hero() {
             >
               <div className="relative">
                 <h3 className="text-lg font-semibold mb-2 leading-tight">
-                  Browse Projects
+                  Financial & Output contribution by the Non-state Actors
                 </h3>
-                <p className="text-sm font-light text-authority-foreground/90 line-clamp-3">
-                  Track project investments and outputs by partners, aligned to
-                  NDP IV, Vision 2040 and relevant sector plans.
+                <p className="text-sm font-light text-authority-foreground/90 ">
+                  Projects implemented by Non-State Actors contribute directly to the achievement of the National Development Plan...
                 </p>
               </div>
               <div className="flex justify-end mt-4">

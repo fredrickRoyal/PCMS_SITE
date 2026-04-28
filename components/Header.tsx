@@ -157,11 +157,10 @@ function LangSwitcher() {
             onClick={() => setLang(code)}
             aria-current={lang === code ? 'true' : undefined}
             aria-label={code === 'en' ? 'English' : 'Luganda'}
-            className={`uppercase tracking-[0.2em] px-1 py-0.5 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-pcms-gold transition-colors ${
-              lang === code
+            className={`uppercase tracking-[0.2em] px-1 py-0.5 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-pcms-gold transition-colors ${lang === code
                 ? 'text-pcms-ink'
                 : 'text-pcms-ink/55 hover:text-pcms-ink'
-            }`}
+              }`}
           >
             {code}
           </button>
@@ -227,7 +226,7 @@ export function Header() {
               Official Portal · Government of Uganda
             </span>
             <span className="xs:hidden">
-              An official website of the Government of Uganda
+              Government of the Republic of Uganda
             </span>
           </span>
           <div className="flex items-center gap-3">
@@ -332,11 +331,10 @@ export function Header() {
                       href={item.href}
                       aria-current={active ? 'page' : undefined}
                       aria-haspopup={hasChildren ? 'menu' : undefined}
-                      className={`relative group inline-flex items-center gap-1 whitespace-nowrap px-2.5 py-3 text-[13px] font-medium tracking-[0.02em] transition-colors rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-pcms-gold focus-visible:ring-offset-2 focus-visible:ring-offset-pcms-cream ${
-                        active
+                      className={`relative group inline-flex items-center gap-1 whitespace-nowrap px-2.5 py-3 text-[13px] font-medium tracking-[0.02em] transition-colors rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-pcms-gold focus-visible:ring-offset-2 focus-visible:ring-offset-pcms-cream ${active
                           ? 'text-pcms-ink'
                           : 'text-pcms-ink/80 hover:text-pcms-green'
-                      }`}
+                        }`}
                     >
                       {item.label}
                       {hasChildren && (
@@ -348,9 +346,8 @@ export function Header() {
                       {/* Accent bar — grows from center (ceremonial gold, 3px) */}
                       <span
                         aria-hidden
-                        className={`absolute left-1/2 -translate-x-1/2 bottom-0 h-[3px] bg-pcms-gold rounded-full transition-[width] duration-300 ease-out ${
-                          active ? 'w-[70%]' : 'w-0 group-hover:w-[70%]'
-                        }`}
+                        className={`absolute left-1/2 -translate-x-1/2 bottom-0 h-[3px] bg-pcms-gold rounded-full transition-[width] duration-300 ease-out ${active ? 'w-[70%]' : 'w-0 group-hover:w-[70%]'
+                          }`}
                       />
                     </Link>
 
@@ -365,11 +362,10 @@ export function Header() {
                               key={child.href}
                               href={child.href}
                               role="menuitem"
-                              className={`block px-4 py-2 text-[13px] transition-colors ${
-                                isActive(child.href)
+                              className={`block px-4 py-2 text-[13px] transition-colors ${isActive(child.href)
                                   ? 'text-pcms-green bg-pcms-cream-muted font-medium'
                                   : 'text-pcms-ink/85 hover:text-pcms-green hover:bg-pcms-cream-muted'
-                              }`}
+                                }`}
                             >
                               {child.label}
                             </Link>
@@ -428,9 +424,7 @@ export function Header() {
             </span>
             <span aria-hidden className="w-px h-3 bg-white/30 flex-shrink-0" />
             <span className="text-[12px] md:text-[13.5px] leading-snug tracking-[0.01em] font-medium">
-              Empowering coordinated, high-impact partnerships and strengthening
-              societal contributions by Non-State Actors to national
-              development.
+              Empowering coordinated, high-impact partnerships and strengthening whole-of-society contributions by Non-State Actors to national development.
             </span>
           </div>
         </div>
@@ -441,11 +435,10 @@ export function Header() {
            Mobile drawer
          ================================================================== */}
       <div
-        className={`fixed inset-0 bg-black/40 xl:hidden transition-opacity duration-300 ${
-          menuOpen
+        className={`fixed inset-0 bg-black/40 xl:hidden transition-opacity duration-300 ${menuOpen
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
-        }`}
+          }`}
         onClick={() => setMenuOpen(false)}
         aria-hidden
       />
@@ -454,9 +447,8 @@ export function Header() {
         role="dialog"
         aria-modal="true"
         aria-label="Primary navigation"
-        className={`fixed top-0 right-0 h-full w-72 bg-pcms-cream border-l border-pcms-gold-muted/30 shadow-xl transform transition-transform duration-300 ease-out xl:hidden z-50 ${
-          menuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 h-full w-72 bg-pcms-cream border-l border-pcms-gold-muted/30 shadow-xl transform transition-transform duration-300 ease-out xl:hidden z-50 ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="px-4 py-3 flex items-center justify-between border-b border-pcms-gold-muted/25">
           <ThemeToggle />
@@ -478,11 +470,10 @@ export function Header() {
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
                 aria-current={active ? 'page' : undefined}
-                className={`px-3 py-3 text-[14px] font-medium tracking-wide rounded-md transition-colors ${
-                  active
+                className={`px-3 py-3 text-[14px] font-medium tracking-wide rounded-md transition-colors ${active
                     ? 'text-pcms-green bg-pcms-cream-muted border-l-[3px] border-pcms-gold pl-[9px]'
                     : 'text-pcms-ink/85 hover:text-pcms-green hover:bg-pcms-cream-muted'
-                }`}
+                  }`}
               >
                 {item.label}
               </Link>
